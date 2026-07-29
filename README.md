@@ -8,4 +8,4 @@ You should provide the following by Jul 30:
 - Design document
 - Project timeline
 - Demo
- 3D model link: https://drive.google.com/drive/my-drive
+3D model link: https://drive.google.com/drive/my-drive

@@ -1,7 +1,7 @@
 # AnimaeTechnologiesLimited-CyclingGroove
 The repository is for hosting the application files and for distributing the application.
 
-#Agenda
+# Agenda
 
 As tasked, project members should submit their indivual ideas as a proposal.
 You should provide the following by Jul 30:

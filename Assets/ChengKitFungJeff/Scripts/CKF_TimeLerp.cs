@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,6 +12,7 @@ public class CKF_TimeLerp : MonoBehaviour
     public void SetValues(float target, float current) { targetValue = target; SetCurrent(current); }
     public void SetTarget(float target) { targetValue = target; }
     public void SetCurrent(float current) { currentValue = current; getValue?.Invoke(currentValue); }
+    public void SetTimeMult(float value) { timeMult = Mathf.Max(value,0); }
 
     public void Pause() { paused = true; }
     public void Resume() { paused = false; }

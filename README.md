@@ -4,3 +4,6 @@ The repository is for hosting the application files and for distributing the app
 # Agenda
 
 Group discussion on the future of the project.
+
+- UI
+- Mapping

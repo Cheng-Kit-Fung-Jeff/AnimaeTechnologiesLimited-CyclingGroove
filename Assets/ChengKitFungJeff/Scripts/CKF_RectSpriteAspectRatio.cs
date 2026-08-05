@@ -3,14 +3,13 @@ using UnityEngine.UI;
 
 public class CKF_RectSpriteAspectRatio : MonoBehaviour
 {
-    private CKF_RectTransform selfRectController;
+    [GetSelfField] public CKF_RectTransform selfRectController;
     private float width, height;
     public float xRatio, yRatio;
 
 
     private void Awake()
     {
-        selfRectController = GetComponent<CKF_RectTransform>();
         {
             if (GetComponent<Image>() is Image i)
             {

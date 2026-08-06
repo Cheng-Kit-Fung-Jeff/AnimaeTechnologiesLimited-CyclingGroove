@@ -17,4 +17,6 @@ public class CKF_DTime : MonoBehaviour
 
     public void SetEnable(bool value) { enable = value; }
 
+    public void SetMultiplier(float value) { multiplier = value; }
+
 }

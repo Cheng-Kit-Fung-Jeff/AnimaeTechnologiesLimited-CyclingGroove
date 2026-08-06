@@ -50,7 +50,7 @@ public class CKF_Math : MonoBehaviour
     public void ApplyAtan() { value = Mathf.Atan(value); }
     public void ApplyAbs() { value = Mathf.Abs(value); }
 
-    public void GetValue() { getValue?.Invoke(value); }
+    public void Get() { getValue?.Invoke(value); }
     public void GetInverse(float value) { getValue?.Invoke(1/value);}
     public void GetSin(float value) { getValue?.Invoke(Mathf.Sin(value)); }
     public void GetCos(float value) { getValue?.Invoke(Mathf.Cos(value)); }
@@ -71,6 +71,13 @@ public class CKF_Math : MonoBehaviour
     public void GetAcos(float value) { getValue?.Invoke(Mathf.Acos(value)); }
     public void GetAtan(float value) { getValue?.Invoke(Mathf.Atan(value)); }
     public void GetAbs(float value) { getValue?.Invoke(Mathf.Abs(value)); }
+
+
+    public void Mul(float value) { this.value *= value; }
+    public void Div(float value) { this.value /= value; }
+    public void Add(float value) { this.value += value; }
+    public void Sub(float value) { this.value -= value; }
+    public void Mod(float value) { this.value %= value; }
 
 }
 

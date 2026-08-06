@@ -41,7 +41,7 @@ public class CKF_FlipFlopLadder: MonoBehaviour
         setValue((float)value);
     }
 
-    public void setValue(float value)
+    public void setValue(float value) //change name to GetValue
     {
         currentValue = value;
         if (jumpState)

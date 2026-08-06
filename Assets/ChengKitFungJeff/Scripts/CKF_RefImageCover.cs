@@ -16,9 +16,12 @@ public class CKF_RefImageCover : MonoBehaviour
 
     private void Update()
     {
-        
+        if (width == 0 || height == 0) return;
 
         float dX = target.rect.width * height, dY = target.rect.height * width;
+
+        
+
         if(setted_dX != dX || setted_dY != dY)
         {
             setted_dX = dX;
@@ -49,13 +52,21 @@ public class CKF_RefImageCover : MonoBehaviour
         {
             if (GetComponent<Image>() is Image i)
             {
-                width = i.sprite.rect.width; height = i.sprite.rect.height;
+                if(i.sprite != null)
+                {
+                    width = i.sprite.rect.width;
+                    height = i.sprite.rect.height;
+                }
             }
         }
         {
             if (GetComponent<RawImage>() is RawImage i)
             {
-                width = i.texture.width; height = i.texture.height;
+                if(i.texture != null)
+                {
+                    width = i.texture.width;
+                    height = i.texture.height;
+                }
             }
         }
     }

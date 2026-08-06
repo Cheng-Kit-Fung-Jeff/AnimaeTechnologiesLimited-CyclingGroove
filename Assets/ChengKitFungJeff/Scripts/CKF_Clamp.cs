@@ -1,18 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CKF_Clamp : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public bool clampLower, clampUpper;
+    public float lower, upper;
 
-    // Update is called once per frame
-    void Update()
+    public UnityEvent<float> getValue = new();
+    public UnityEvent eventLower = new(), eventUpper = new();
+
+    public void GetValue(float value)
     {
-        
+        float res = value;
+        bool flagLower = false, flagUpper = true;
+        if(clampLower && value <= lower) { flagLower = true; res = lower; }
+        if(clampUpper && value >= upper) { flagUpper = true;  res = upper; }
+        getValue?.Invoke(res);
+        if (flagLower) eventLower?.Invoke();
+        if (flagUpper) eventUpper?.Invoke();
+
     }
 }

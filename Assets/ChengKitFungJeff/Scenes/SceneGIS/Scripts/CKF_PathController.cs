@@ -77,10 +77,14 @@ public class CKF_PathController : MonoBehaviour, I_CKF_Reset
 
     public void ExploreNode(Transform node, float amount)
     {
-        foreach (var path in mapTransformToPaths[node.GetInstanceID()])
+        try
         {
-            path.Enter(node, amount);
+            foreach (var path in mapTransformToPaths[node.GetInstanceID()])
+            {
+                path.Enter(node, amount);
+            }
         }
+        catch { Debug.Log("not found id: " + node.GetInstanceID()+", name: "+ node.name); }
     }
 
     public readonly Dictionary<int, CKF_Path> mapActivePath = new();

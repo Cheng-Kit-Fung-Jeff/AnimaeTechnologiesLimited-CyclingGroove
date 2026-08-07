@@ -25,15 +25,23 @@ public class CKF_TimeVelocityScaleController : MonoBehaviour
         velocityTimeScaler.multiplier = newScale;
     }
 
+    public void IncrementFactor(float value)
+    {
+        if (value < 0) return;
+        Increment(scaledRemainingTime.counter * value);
+    }
+
     public void SetInitTime() { SetInitTime(initTime); }
 
     public void SetInitTime(float value)
     {
-        remainingTime.counter = value;
-        scaledRemainingTime.counter = value;
+        Debug.Log("Set init time: " + value);
+        initTime = value;
+        remainingTime.counter = initTime;
+        scaledRemainingTime.counter = initTime;
         foreach (CKF_Timer timer in timers)
         {
-            timer.setTimer(value);
+            timer.setTimer(initTime);
         }
     }
 }

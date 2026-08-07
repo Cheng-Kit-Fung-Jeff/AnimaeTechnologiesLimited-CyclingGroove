@@ -33,7 +33,7 @@ public class CKF_SetText : MonoBehaviour
 
     public void SetInt(int value)
     {
-        text.text = value.ToString();
+        SetFloat(value);
     }
     public void SetFloat(float value)
     {
@@ -49,12 +49,10 @@ public class CKF_SetText : MonoBehaviour
         int index = nextText.IndexOf(".");
         if (index != -1)
         {
-            nextText = nextText[..index] + (floatDecimal == 0? "" : nextText.Substring(index,Mathf.Min(floatDecimal, nextText.Length - index - 1)));
+            nextText = nextText[..index] + (floatDecimal == 0? "" : nextText.Substring(index,Mathf.Min(floatDecimal + 1, nextText.Length - index - 1)));
         }
         nextText += u;
-        if (text != null)
-            text.text = nextText;
-        getValue?.Invoke(nextText);
+        SetText(nextText);
     }
     private void GetUnit(float value, out string u, out float v)
     {
@@ -67,5 +65,20 @@ public class CKF_SetText : MonoBehaviour
             u = units[check].name;
             check++;
         }
+    }
+
+    public int fontWeight = 100;
+    public void SetText(string t)
+    {
+        if (text != null)
+        {
+            string next = $"<font-weight=\"{fontWeight}\">{t}</font-weight>";
+            /*if (italics)
+            {
+                next = $"<i>{next}</i>";
+            }*/
+            text.text = next;
+        }
+        getValue?.Invoke(t);
     }
 }

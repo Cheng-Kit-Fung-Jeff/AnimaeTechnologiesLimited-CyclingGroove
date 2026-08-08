@@ -10,9 +10,9 @@ public class CKF_PointerEvent : MonoBehaviour, IPointerEnterHandler, IPointerExi
     public bool focused = false;
     public List<GameObject> focusGameObjects = new();
     public HashSet<int> focusGameObjectIDsHashset = new();
-    public UnityEvent eventFocus = new(), eventDefocus = new();
-    public UnityEvent<PointerEventData> eventEnter = new(), eventExit = new(), eventDown = new(), eventUp = new(), eventClick = new();
-    public UnityEvent<BaseEventData> eventDeselect = new();
+    public UnityEvent eventFocus, eventDefocus;
+    public UnityEvent<PointerEventData> eventEnter, eventExit, eventDown, eventUp, eventClick;
+    public UnityEvent<BaseEventData> eventDeselect;
 
     public void OnDeselect(BaseEventData eventData)
     {

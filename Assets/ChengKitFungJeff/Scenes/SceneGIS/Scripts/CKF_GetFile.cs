@@ -23,7 +23,7 @@ public class CKF_GetFile : MonoBehaviour
         if (err != null)
         {
             if(error != null)
-                error.text += err + ';';
+                error.text += err + '\n';
             return;
         }
         if(checkString)
@@ -39,10 +39,10 @@ public class CKF_GetFile : MonoBehaviour
         {
             if(checkFloat)
                 try { getFloat?.Invoke(float.Parse(res)); }
-                catch (System.Exception e){ error.text += $"{System.IO.Path.Combine(Application.dataPath,file)}, {e.Message};"; }
+                catch (System.Exception e){ error.text += $"{System.IO.Path.Combine(Application.dataPath,file)}, {e.Message}\n"; }
             if (checkInt)
                 try { getInt?.Invoke(int.Parse(res)); }
-                catch (System.Exception e) { error.text += $"{System.IO.Path.Combine(Application.dataPath, file)}, {e.Message};"; }
+                catch (System.Exception e) { error.text += $"{System.IO.Path.Combine(Application.dataPath, file)}, {e.Message}\n"; }
         }
     }
 }

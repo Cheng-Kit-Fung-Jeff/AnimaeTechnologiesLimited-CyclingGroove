@@ -5,7 +5,7 @@ using UnityEngine.Events;
 public class CKF_PathInteractActor : MonoBehaviour, I_CKF_Reset
 {   // only execute once
     public bool interactionEnabled = true; // Removed ReaadonlyField for quicker setting
-    public UnityEvent eventInteract = new();
+    public UnityEvent eventInteract;
     public List<CKF_Path> interactPaths = new();
 
     public float distance;

@@ -9,7 +9,7 @@ public class CKF_Clamp : MonoBehaviour
     public float lower, upper;
 
     public UnityEvent<float> getValue = new();
-    public UnityEvent eventLower = new(), eventUpper = new();
+    public UnityEvent eventLower, eventUpper;
 
     public void GetValue(float value)
     {

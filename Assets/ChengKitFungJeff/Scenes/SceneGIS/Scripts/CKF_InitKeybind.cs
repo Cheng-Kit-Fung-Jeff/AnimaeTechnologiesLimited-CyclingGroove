@@ -24,12 +24,12 @@ public class CKF_InitKeybind : MonoBehaviour
             string res = Rw.Read(p.file, out string err);
             if (err != null)
             {
-                error.text += err+ ';';
+                error.text += err+ '\n';
                 continue;
             }
             try
             { p.inputAction.action.ApplyBindingOverride(0, res); }
-            catch (Exception e){ error.text += e.Message + ';'; }
+            catch (Exception e){ error.text += e.Message + '\n'; }
         }
     }
 }

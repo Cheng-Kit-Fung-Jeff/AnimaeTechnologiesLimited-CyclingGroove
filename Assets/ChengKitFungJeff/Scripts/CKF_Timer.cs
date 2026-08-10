@@ -68,4 +68,14 @@ public class CKF_Timer : MonoBehaviour
             eventEnd?.Invoke();
         }
     }
+
+    public void CallSet(float value)
+    {
+        eventSet?.Invoke(value);
+    }
+
+    public void CallSetRate(float value)
+    {
+        eventSetRate?.Invoke(value);
+    }
 }

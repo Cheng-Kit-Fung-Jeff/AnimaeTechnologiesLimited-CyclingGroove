@@ -66,19 +66,9 @@ public class CKF_SetText : MonoBehaviour
             check++;
         }
     }
-
-    public int fontWeight = 100;
     public void SetText(string t)
     {
-        if (text != null)
-        {
-            string next = $"<font-weight=\"{fontWeight}\">{t}</font-weight>";
-            /*if (italics)
-            {
-                next = $"<i>{next}</i>";
-            }*/
-            text.text = next;
-        }
+        text.text = t;
         getValue?.Invoke(t);
     }
 }

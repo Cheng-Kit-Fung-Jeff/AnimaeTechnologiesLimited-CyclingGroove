@@ -5,7 +5,7 @@ public class CKF_RectRefHeight : MonoBehaviour
     public RectTransform refRect;
     private float setted = float.NegativeInfinity;
     [Min(0)]public float ratio = 1;
-    public bool preservePixel;
+    public bool preservePixel, ignoreRefScale = true;
     [SerializeField] [GetSelfField] private CKF_RectTransform selfRect;
 
     public void Update()
@@ -30,7 +30,15 @@ public class CKF_RectRefHeight : MonoBehaviour
 
     public void Apply()
     {
-        if (preservePixel) selfRect.SetLocalScaleY(refRect.rect.height * ratio * refRect.localScale.y / selfRect.GetHeight());
-        else selfRect.SetHeight(refRect.rect.height * ratio);
+        if (preservePixel)
+            if (ignoreRefScale)
+                selfRect.SetLocalScaleY(refRect.rect.height * ratio / selfRect.GetHeight());
+            else
+                selfRect.SetLocalScaleY(refRect.rect.height * ratio * refRect.localScale.y / selfRect.GetHeight());
+        else
+            if (ignoreRefScale)
+                selfRect.SetHeight(refRect.rect.height * ratio);
+        else
+            selfRect.SetLocalScaleY(refRect.rect.height * ratio * refRect.localScale.y);
     }
 }

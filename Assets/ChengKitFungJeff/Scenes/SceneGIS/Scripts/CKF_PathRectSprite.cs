@@ -25,7 +25,7 @@ public class CKF_PathRectSprite : MonoBehaviour
             if (sqrDist != 0)
             {
                 pathRect.SetLocalRotationZ(Mathf.Rad2Deg * Mathf.Atan2(settedB.y - settedA.y, settedB.x - settedA.x) + 90);
-                pathRect.SetHeight((Mathf.Sqrt(sqrDist)) / settedLocalScaleY + endPointRadius);
+                pathRect.SetHeight(Mathf.Sqrt(sqrDist) / settedLocalScaleY + endPointRadius);
             }
             else
             {
@@ -38,6 +38,7 @@ public class CKF_PathRectSprite : MonoBehaviour
     {
         pathRect.SetLocalScaleX(value / pathRect.GetWidth());
         pathRect.SetLocalScaleY(pathRect.GetLocalScale().x);
+        //image.pixelsPerUnitMultiplier = Mathf.Min(endPointRadius / value, endPointRadius);
     }
 
     public void SetOuterColor(Color value)

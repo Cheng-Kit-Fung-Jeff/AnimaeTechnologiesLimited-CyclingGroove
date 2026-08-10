@@ -351,10 +351,10 @@ GameObject:
   - component: {fileID: 4951416357708867775}
   - component: {fileID: 366926242140976003}
   - component: {fileID: 5973611758292950157}
+  - component: {fileID: 4078475005706410594}
   - component: {fileID: 2747246683639171553}
   - component: {fileID: 5075278270595821382}
   - component: {fileID: 5794573263004589955}
-  - component: {fileID: 4078475005706410594}
   m_Layer: 5
   m_HasEditorInfo: 1
   m_Name: IconWrapper
@@ -411,6 +411,23 @@ MonoBehaviour:
   refRect: {fileID: 4951416357708867775}
   ratio: 1
   preservePixels: 0
+--- !u!114 &4078475005706410594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5816590411961665945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1125600199b0d442ba0210f972e8232, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  refRect: {fileID: 4951416357708867775}
+  ratio: 1
+  preservePixels: 0
+  selfRect: {fileID: 366926242140976003}
+  selfLayoutElement: {fileID: 5794573263004589955}
 --- !u!222 &2747246683639171553
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -469,23 +486,6 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!114 &4078475005706410594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5816590411961665945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1125600199b0d442ba0210f972e8232, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  refRect: {fileID: 4951416357708867775}
-  ratio: 1
-  preservePixels: 0
-  selfRect: {fileID: 366926242140976003}
-  selfLayoutElement: {fileID: 5794573263004589955}
 --- !u!1 &8900538976710560135
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,6 +597,7 @@ MonoBehaviour:
   refRect: {fileID: 0}
   ratio: 1
   preservePixel: 0
+  ignoreRefScale: 1
   selfRect: {fileID: 9203984657140093925}
 --- !u!114 &7514842983629346615
 MonoBehaviour:

@@ -60,7 +60,8 @@ public class CKF_AttractionIconList : MonoBehaviour
     {
         tracked.Add(Instantiate(element, selfRT).GetComponent<CKF_AttractionIconElement>());
         tracked[^1].refHeight.refRect = selfRT;
-        tracked[^1].icon.sprite = mapIcons[key].icon;
+        if(tracked[^1].icon != null)
+            tracked[^1].icon.sprite = mapIcons[key].icon;
         if (tracked.Count > 1)
         {
             tracked[^2].size.SetTarget(0.5f);

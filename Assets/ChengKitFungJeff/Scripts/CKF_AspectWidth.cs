@@ -20,6 +20,7 @@ public class CKF_AspectWidth : MonoBehaviour
                 settedLocalScaleY = refRect.localScale.y;
                 if(selfRect.GetWidth() != 0)
                     selfRect.SetLocalScaleX(settedHeight * ratio * settedLocalScaleY / selfRect.GetWidth());
+                    //selfRect.SetLocalScaleX(settedHeight * ratio / selfRect.GetWidth());
             }
         }
         else if (settedHeight != refRect.rect.height)
@@ -38,13 +39,14 @@ public class CKF_AspectWidth : MonoBehaviour
         {
             if (selfRect.GetWidth() != 0)
                 selfRect.SetLocalScaleX(settedHeight * ratio * settedLocalScaleY / selfRect.GetWidth());
-            if (selfLayoutElement != null)
-                selfLayoutElement.preferredWidth = selfRect.GetWidth();
+                //selfRect.SetLocalScaleX(settedHeight * ratio / selfRect.GetWidth());
         }
         else
         {
             settedHeight = refRect.rect.height;
             selfRect.SetWidth(settedHeight * ratio);
+            if (selfLayoutElement != null)
+                selfLayoutElement.preferredWidth = selfRect.GetWidth();
         }
     }
 }

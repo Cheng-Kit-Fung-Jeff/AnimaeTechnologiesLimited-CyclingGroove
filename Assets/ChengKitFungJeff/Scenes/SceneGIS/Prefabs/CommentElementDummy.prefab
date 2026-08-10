@@ -84,4 +84,5 @@ MonoBehaviour:
   refRect: {fileID: 0}
   ratio: 1
   preservePixel: 0
+  ignoreRefScale: 1
   selfRect: {fileID: 2175241953265508800}

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public static class Fn
 {
@@ -37,11 +36,11 @@ public static class Fn
 
     public static float Angle2CCD(Vector2 from, Vector2 to) // assume center at origin
     {
-        float distFrom = from.sqrMagnitude, distTo = to.sqrMagnitude, distFromTo = (from-to).sqrMagnitude;
-        float res = Mathf.Rad2Deg * Mathf.Acos(Mathf.Clamp((distFrom + distTo - distFromTo) / (2 * Mathf.Sqrt(distFrom * distTo)),-1,1));
+        float distFrom = from.sqrMagnitude, distTo = to.sqrMagnitude, distFromTo = (from - to).sqrMagnitude;
+        float res = Mathf.Rad2Deg * Mathf.Acos(Mathf.Clamp((distFrom + distTo - distFromTo) / (2 * Mathf.Sqrt(distFrom * distTo)), -1, 1));
         //x(A)y(B)+y(A)x(H)+x(B)y(H)-x(A)y(H)-y(A)x(B)-y(B)x(H)
         //x(A)y(B)-y(A)x(B)
-        float det = from.x*to.y-from.y*to.x;
+        float det = from.x * to.y - from.y * to.x;
         return (from.x * to.y - from.y * to.x) < 0 ? 360 - res : res;
     }
     public static Vector2 Rotate2CCD(Vector2 point, float angle)// assume center at origin
@@ -210,6 +209,212 @@ public static class Fn
             bounciness = bounciness == null ? joint.limits.bounciness : (float)bounciness,
             bounceMinVelocity = minBounceVelocity == null ? joint.limits.bounceMinVelocity : (float)minBounceVelocity
         };
+    }
+
+    public static float[][] MatrixTp(float[][] m)
+    {
+        if (m.Length == 0 || m[0].Length == 0) return Array.Empty<float[]>();
+        float[][] res = new float[m[0].Length][];
+        for (int i = 0; i < res.Length; ++i)
+        {
+            res[i] = new float[m.Length];
+            for (int j = 0; j < m.Length; ++j)
+                res[i][j] = m[j][i];
+        }
+        return res;
+    }
+
+    public static float[][] MatrixMul(float[][] a, float[][] b)
+    {
+        if (a.Length == 0 || a[0].Length == 0 || b.Length == 0 || b[0].Length == 0 || a[0].Length != b.Length) return Array.Empty<float[]>();
+
+        float[][] res = new float[a.Length][];
+
+        for (int i = 0; i < a.Length; ++i)
+        {
+            res[i] = new float[b[0].Length];
+            for (int j = 0; j < b[0].Length; ++j)
+            {
+                for (int k = 0; k < b.Length; ++k)
+                    res[i][j] += a[i][k] * b[k][j];
+            }
+        }
+        return res;
+    }
+
+    public static float[][] MatrixMulTp(float[][] m)
+    {
+        if (m.Length == 0 || m[0].Length == 0) return Array.Empty<float[]>();
+
+        float[][] res = new float[m.Length][];
+        for (int i = 0; i < res.Length; ++i)
+            res[i] = new float[res.Length];
+        for (int i = 0; i < res.Length; ++i)
+            for (int j = i; j < res.Length; ++j)
+            {
+                for (int k = 0; k < m[0].Length; ++k)
+                    res[i][j] += m[i][k] * m[j][k];
+                if(i != j)
+                    res[j][i] = res[i][j];
+            }
+        return res;
+    }
+
+    public static float[][] MatrixTpMul(float[][] m)
+    {
+        if (m.Length == 0 || m[0].Length == 0) return Array.Empty<float[]>();
+
+        float[][] res = new float[m[0].Length][];
+        for (int i = 0; i < res.Length; ++i)
+            res[i] = new float[res.Length];
+        for (int i = 0; i < res.Length; ++i)
+            for (int j = i; j < res.Length; ++j)
+            {
+                for (int k = 0; k < m.Length; ++k)
+                    res[i][j] += m[k][i] * m[k][j];
+                if (i != j)
+                    res[j][i] = res[i][j];
+            }
+        return res;
+    }
+
+    public static float[][] MatrixInverse(float[][] m, float zero = 0.0009765625f)
+    {
+        if (m.Length == 0 || m.Length != m[0].Length) return Array.Empty<float[]>();
+
+        bool IsZero(float v) => Mathf.Abs(v) < zero;
+
+        if (m.Length > 2)
+        {
+            float[][] res = new float[m.Length][], mcp = new float[m.Length][];
+            for (int i = 0; i < m.Length; ++i)
+            {
+                res[i] = new float[m.Length];
+                res[i][i] = 1;
+                mcp[i] = new float[m.Length];
+                for (int j = 0; j < m.Length; ++j)
+                {
+                    mcp[i][j] = m[i][j];
+                }
+            }
+            for (int i = m.Length - 1; i > 0; --i)
+            {
+                float[] baseRow = mcp[i];
+                if (IsZero(baseRow[i]))
+                {
+                    int pt = i;
+                    do
+                    {
+                        if (pt == 0) return Array.Empty<float[]>();
+                        --pt;
+                    }
+                    while (IsZero(mcp[pt][i]));
+                    baseRow = mcp[pt];
+                    mcp[pt] = mcp[i];
+                    mcp[i] = baseRow;
+                    var temp = res[pt];
+                    res[pt] = res[i];
+                    res[i] = temp;
+                }
+                float imul = 1 / baseRow[i];
+
+                for (int j = 0; j < m.Length; ++j)
+                {
+                    res[i][j] *= imul;
+                }
+                for (int j = 0; j < i; ++j)
+                {
+                    mcp[i][j] *= imul;
+
+                }
+                baseRow = mcp[i];
+                for (int _i = 0; _i < i; ++_i)
+                {
+                    for (int j = 0; j < m.Length; ++j)
+                        res[_i][j] -= mcp[_i][i] * res[i][j];
+                    for (int j = 0; j < i; ++j)
+                        mcp[_i][j] -= mcp[_i][i] * baseRow[j];
+
+                }
+            }
+            if (IsZero(mcp[0][0]))
+                return Array.Empty<float[]>();
+            {
+                float imul = 1 / mcp[0][0];
+                for (int j = 0; j < m.Length; ++j)
+                    res[0][j] *= imul;
+            }
+            for (int i = 0; i < m.Length; ++i)
+                for (int j = 0; j < i; ++j)
+                {
+                    if (IsZero(mcp[i][j])) continue;
+                    for (int _j = 0; _j < m.Length; ++_j)
+                        res[i][_j] -= mcp[i][j] * res[j][_j]; 
+                }
+            return res;
+        }
+        else if (m.Length == 2)
+        {
+            float det = m[0][0] * m[1][1] - m[1][0] * m[0][1];
+            if (det != 0)
+            {
+                det = 1 / det;
+                return new float[2][] { new float[2] { m[1][1] * det, -m[0][1] * det }, new float[2] { -m[1][0] * det, m[0][0] * det } };
+            }
+        }
+        else if (m.Length == 1) return m[0][0] == 0 ? Array.Empty<float[]>() : new float[1][] { new float[1] { 1 } };
+        ;
+        return Array.Empty<float[]>();
+    }
+
+    public static float[] LinearRegression(Func<float, float, float>[] model, float[] x, float[] y)
+    {
+        float[][] X = new float[model.Length][];
+        float[][] Y = new float[1][];
+        Y[0] = new float[model.Length]; 
+        for (int i = 0; i < X.Length; i++)
+        {
+            X[i] = new float[x.Length];
+            Y[0][i] = y[i];
+            Func<float, float, float> cur = model[i];
+            for (int j = 0; j < x.Length; j++)
+                X[i][j] = cur(x[j], y[j]);
+        }
+
+        float[] res = new float[model.Length];
+
+        float[][] temp = MatrixTpMul(X);
+        PrintMatrix(temp);
+        temp = MatrixInverse(temp);
+        PrintMatrix(temp);
+        temp = MatrixMul(X, temp);
+        PrintMatrix(temp);
+        temp = MatrixMul(Y, temp);
+        PrintMatrix(temp);
+
+        X = MatrixMul(Y, MatrixMul(X, MatrixInverse(MatrixTpMul(X))));
+
+        return res;
+        // ((_Xtp*_X).inv()*_Xtp*_y).tp() = _y.tp()*_X*(_Xtp*_X).inv()
+        /*
+         def LinearRegression(_df, model, x = "x", y = "y", offset = 0): #model is a tuple of functions
+    #from pandas import DataFrame as DF
+    _x = None
+    _y = None
+    if type(_df) == DF:
+        _x = _df[x].tolist()
+        _y = _df[y].tolist()
+    elif type(_df) == dict:
+        _x,_y = tuple(zip(*_df.items()))
+    elif type(_df) == tuple or type(_df) == list:
+        _x = _df[0 if x == "x" else x]
+        _y = _df[1 if x == "y" else y]
+    _y = Matrix((_y,)).tp()
+    _X = Matrix(tuple(tuple(_f(_v) for _f in model) for _v in _x) if offset == 0 else
+        tuple(tuple(_f(_v) for _f in model) for _v in _x for _v in (_v+offset,)))
+    _Xtp = _X.tp()
+    return ((_Xtp*_X).inv()*_Xtp*_y).tp()
+         */
     }
 
     public class PID
@@ -1032,6 +1237,41 @@ public static class Fn
         }
     }
 
+    public static void PrintMatrix<T>(T[][] m)
+    {
+        if (m.Length == 0 || m[0].Length == 0) { Debug.Log("[]\n"); return; }
+        int[] maxes = new int[m[0].Length];
+        string[][] strings = new string[m.Length][];
+
+        for (int j = 0; j < m[0].Length; ++j)
+            maxes[j] = 0;
+
+        for (int i = 0; i < m.Length; ++i)
+        {
+            strings[i] = new string[m[i].Length];
+            for (int j = 0; j < m[i].Length; ++j)
+            {
+                strings[i][j] = m[i][j].ToString();
+                if (strings[i][j].Length > maxes[j])
+                    maxes[j] = strings[i][j].Length;
+            }
+        }
+        string res = "";
+        for (int i = 0; i < m.Length; ++i)
+        {
+            res += "[";
+            for (int j = 0; j < m.Length;)
+            {
+                if(maxes[j] - strings[i][j].Length > 0)
+                    res += new string(' ', maxes[j] - strings[i][j].Length);
+                res += strings[i][j];
+                if (++j < m.Length) res += ',';
+            }
+            res += "]\n";
+        }
+        Debug.Log(res);
+    }
+    
     /*[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     public static void i() {
         byte[] tex = new byte[0]; 
@@ -1096,5 +1336,57 @@ public static class Fn
             Debug.Log(deb);
         }
     }*/
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    public static void i()
+    {
+        /*for (int testsize = 4; testsize < 6; ++testsize)
+        { 
+            float[][] test = new float[testsize][];
+            for (int i = 0; i < testsize; ++i)
+            {
+                test[i] = new float[testsize];
+                for (int j = 0; j < testsize; ++j)
+                {
+                    test[i][j] = UnityEngine.Random.Range(0, testsize);
+                }
+            }
+            PrintMatrix(test);
+            PrintMatrix(MatrixMul(test, test));
+            PrintMatrix(MatrixMul(MatrixTp(test), test));
+            PrintMatrix(MatrixTpMul(test));
+            PrintMatrix(MatrixMul(test, MatrixTp(test)));
+            PrintMatrix(MatrixMulTp(test));
 
+            Debug.Log("Begin MatrixInverse");
+            float[][] inv = MatrixInverse(test);
+            Debug.Log("End MatrixInverse");
+            PrintMatrix(MatrixMulTp(inv));
+            PrintMatrix(MatrixMul(test, inv));
+            PrintMatrix(MatrixMul(inv, test));
+        }*/
+
+        int testSize = 20;
+        float[] x = new float[testSize], y = new float[testSize], r;
+
+        Func<float, float, float>[] model = new Func<float, float, float>[3]
+        { static (float x, float y) => 1, static (float x, float y) => x, static (float x, float y) => x * x };
+
+        for (int i = 0; i < testSize; ++i)
+        {
+            x[i] = UnityEngine.Random.Range(0.0f, 10.0f);
+            y[i] = 3*x[i]*x[i]-7 * x[i] + 5;
+        }
+        r = LinearRegression(model, x, y);
+        string deb = "";
+        for (int i = 0; i < r.Length;)
+        {
+            deb += r[i];
+            ++i;
+            if (i != r.Length)
+            {
+                deb += ',';
+            }
+        }
+        Debug.Log(deb);
+    }//*/
 }

@@ -23,4 +23,9 @@ public class CKF_IntervalControl : MonoBehaviour
         getInterval?.Invoke(Mathf.Min(pulseInterval, maxInterval));
         pulseInterval = 0;
     }
+    public void Action()
+    {
+        getInterval?.Invoke(Mathf.Min(pulseInterval, maxInterval));
+        pulseInterval = 0;
+    }
 }

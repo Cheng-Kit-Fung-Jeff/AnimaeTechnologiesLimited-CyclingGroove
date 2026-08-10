@@ -81,6 +81,7 @@ MonoBehaviour:
   refRect: {fileID: 0}
   ratio: 1
   preservePixel: 0
+  ignoreRefScale: 1
   selfRect: {fileID: 8294834342434750723}
 --- !u!114 &9107376286545129580
 MonoBehaviour:
@@ -98,6 +99,7 @@ MonoBehaviour:
   ratio: 1
   preservePixels: 0
   selfRect: {fileID: 8294834342434750723}
+  selfLayoutElement: {fileID: 0}
 --- !u!114 &3864265476108068697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,6 +442,7 @@ MonoBehaviour:
   refRect: {fileID: 8022248391098394995}
   ratio: 1
   preservePixel: 0
+  ignoreRefScale: 1
   selfRect: {fileID: 5205064271304419707}
 --- !u!114 &5109229630905182801
 MonoBehaviour:
@@ -456,6 +459,7 @@ MonoBehaviour:
   refRect: {fileID: 8022248391098394995}
   ratio: 1
   preservePixel: 0
+  ignoreRefScale: 1
   selfRect: {fileID: 5205064271304419707}
 --- !u!1 &8192984558233337425
 GameObject:

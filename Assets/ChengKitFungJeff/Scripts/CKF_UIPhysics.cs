@@ -13,7 +13,7 @@ public class CKF_UIPhysics : MonoBehaviour
     public float maxVelocity;
 
     [ReadonlyField] public Vector2 acceleration;
-
+    public Vector2 gravity;
     public List<CKF_UIAttractor> attractors;
 
     private void Awake()
@@ -35,7 +35,7 @@ public class CKF_UIPhysics : MonoBehaviour
             selfRect.SetLocalRotation(Quaternion.Euler(0,0, (rotation.eulerAngles.z < 180 ? 180 - rotation.eulerAngles.x : rotation.eulerAngles.x) + lookOffset));
         }
 
-        velocity += acceleration * Time.deltaTime;
+        velocity += (acceleration + gravity) * Time.deltaTime;
         velocity = Vector2.ClampMagnitude(velocity, maxVelocity);
         acceleration.Set(0, 0);
         foreach (var a in attractors) { acceleration += a.GetAcceleration(this); }

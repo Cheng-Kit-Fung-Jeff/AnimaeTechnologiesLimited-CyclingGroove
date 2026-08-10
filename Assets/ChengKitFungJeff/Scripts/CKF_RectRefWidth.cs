@@ -2,12 +2,20 @@ using UnityEngine;
 
 public class CKF_RectRefWidth : MonoBehaviour
 {
+    public RefRectTarget initRectTarget;
     public RectTransform refRect;
     private float setted = float.NegativeInfinity;
     [Min(0)] public float ratio = 1;
     public bool preservePixel, ignoreRefScale = true;
     [SerializeField] [GetSelfField] private CKF_RectTransform selfRect;
 
+    public enum RefRectTarget { custom, parent, self }
+
+    private void Awake()
+    {
+        if (initRectTarget == RefRectTarget.parent) refRect = transform.parent as RectTransform;
+        else if (initRectTarget == RefRectTarget.self) refRect = transform as RectTransform;
+    }
     public void Update()
     {
         if (setted != refRect.rect.width)

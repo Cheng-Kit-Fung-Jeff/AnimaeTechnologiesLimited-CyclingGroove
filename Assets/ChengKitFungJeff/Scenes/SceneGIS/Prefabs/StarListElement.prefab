@@ -517,6 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a19a71fc788fa6143a1f9ee33006c1e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initRectTarget: 0
   refRect: {fileID: 6556033294731189511}
   ratio: 1
   preservePixel: 0
@@ -534,6 +535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25f75cb2ddbb7314bbcf0fec2780bbc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initRectTarget: 0
   refRect: {fileID: 6556033294731189511}
   ratio: 1
   preservePixel: 0
@@ -558,7 +560,7 @@ GameObject:
   - component: {fileID: 3736110652315478009}
   m_Layer: 5
   m_HasEditorInfo: 1
-  m_Name: StarElement
+  m_Name: StarListElement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -617,6 +619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a19a71fc788fa6143a1f9ee33006c1e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initRectTarget: 0
   refRect: {fileID: 0}
   ratio: 1
   preservePixel: 0

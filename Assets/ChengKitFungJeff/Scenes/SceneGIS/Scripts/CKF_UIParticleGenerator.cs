@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CKF_UIParticleGenerator : MonoBehaviour
 {
-
     public Transform parent;
     public GameObject particle;
     public Sprite image;
@@ -29,6 +28,9 @@ public class CKF_UIParticleGenerator : MonoBehaviour
                     d.speed * Mathf.Cos(Mathf.Deg2Rad * (d.angle + angleOffset)),
                     d.speed * Mathf.Sin(Mathf.Deg2Rad * (d.angle + angleOffset)));
             CKF_UIParticle newParticle = Instantiate(particle, parent).GetComponent<CKF_UIParticle>();
+            if (newParticle.refHeight != null)
+                newParticle.refHeight.refRect = parent as RectTransform;
+
             if(image != null && newParticle.image != null)
                 newParticle.image.sprite = image;
             newParticle.life.setTimer(life);

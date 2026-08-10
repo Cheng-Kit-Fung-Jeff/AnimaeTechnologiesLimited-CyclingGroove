@@ -26,7 +26,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1589767207330177493}
-  m_LocalRotation: {x: 0, y: -0, z: 0.95105654, w: -0.30901685}
+  m_LocalRotation: {x: -0, y: -0, z: 0.9510566, w: -0.30901688}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -102,7 +102,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2160376007885085738}
-  m_LocalRotation: {x: 0, y: 0, z: 0.58778524, w: 0.809017}
+  m_LocalRotation: {x: -0, y: -0, z: 0.58778524, w: 0.809017}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -239,12 +239,11 @@ GameObject:
   - component: {fileID: 323916390373175662}
   - component: {fileID: 1430973619194024072}
   - component: {fileID: 4417704086280312179}
-  - component: {fileID: 3181321557875114373}
+  - component: {fileID: 8725228472139541601}
   - component: {fileID: 3911056459881249430}
   - component: {fileID: 8437426155381115180}
   - component: {fileID: 773399313094840856}
   - component: {fileID: 1568202071666243908}
-  - component: {fileID: 7929277445435039832}
   - component: {fileID: 6564987271342161821}
   - component: {fileID: 5361005720344811960}
   - component: {fileID: 8703481131845538538}
@@ -269,11 +268,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3009105381675011908}
-  - {fileID: 4369498034821742742}
-  - {fileID: 2573971911800765014}
-  - {fileID: 8719728415135807498}
   - {fileID: 6093111661612534817}
+  - {fileID: 8719728415135807498}
+  - {fileID: 2573971911800765014}
+  - {fileID: 4369498034821742742}
+  - {fileID: 3009105381675011908}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -308,11 +307,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initRectTarget: 1
   refRect: {fileID: 0}
-  ratio: 1
+  ratio: 0.05
   preservePixel: 0
   ignoreRefScale: 1
   selfRect: {fileID: 1430973619194024072}
---- !u!114 &3181321557875114373
+--- !u!114 &8725228472139541601
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -321,15 +320,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2959548494861629471}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25f75cb2ddbb7314bbcf0fec2780bbc5, type: 3}
+  m_Script: {fileID: 11500000, guid: b1125600199b0d442ba0210f972e8232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initRectTarget: 1
-  refRect: {fileID: 0}
+  refRect: {fileID: 323916390373175662}
   ratio: 1
-  preservePixel: 0
-  ignoreRefScale: 1
+  preservePixels: 0
   selfRect: {fileID: 1430973619194024072}
+  selfLayoutElement: {fileID: 0}
 --- !u!114 &3911056459881249430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,27 +376,27 @@ MonoBehaviour:
   eventEnd:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3911056459881249430}
-        m_TargetAssemblyTypeName: CKF_Timer, Assembly-CSharp
-        m_MethodName: setTimer
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 2
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7929277445435039832}
-        m_TargetAssemblyTypeName: CKF_Once, Assembly-CSharp
-        m_MethodName: Call
+      - m_Target: {fileID: 5361005720344811960}
+        m_TargetAssemblyTypeName: CKF_Destroy, Assembly-CSharp
+        m_MethodName: Destroy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 10
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CKF_Destroy, Assembly-CSharp
+        m_MethodName: Destroy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -481,34 +479,6 @@ MonoBehaviour:
   acceleration: {x: 0, y: 0}
   gravity: {x: 0, y: -1}
   attractors: []
---- !u!114 &7929277445435039832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2959548494861629471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5762d506a39de95479c192c2d6091858, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  called: 0
-  Event:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5361005720344811960}
-        m_TargetAssemblyTypeName: CKF_Destroy, Assembly-CSharp
-        m_MethodName: Destroy
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 1
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &6564987271342161821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -591,7 +561,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 3181321557875114373}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CKF_RectRefWidth, Assembly-CSharp
         m_MethodName: SetRatio
         m_Mode: 0
@@ -618,6 +588,7 @@ MonoBehaviour:
   life: {fileID: 3911056459881249430}
   physics: {fileID: 1568202071666243908}
   image: {fileID: 0}
+  refHeight: {fileID: 0}
 --- !u!1 &5596598213391247634
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,7 +615,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5596598213391247634}
-  m_LocalRotation: {x: 0, y: 0, z: 0.95105654, w: 0.309017}
+  m_LocalRotation: {x: -0, y: -0, z: 0.95105654, w: 0.309017}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -720,7 +691,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8885901472761520952}
-  m_LocalRotation: {x: 0, y: -0, z: 0.58778524, w: -0.809017}
+  m_LocalRotation: {x: -0, y: -0, z: 0.58778524, w: -0.809017}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1

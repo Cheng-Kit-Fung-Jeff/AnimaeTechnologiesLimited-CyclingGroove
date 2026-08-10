@@ -13,6 +13,11 @@ public class CKF_RectRefHeight : MonoBehaviour
 
     private void Awake()
     {
+        UpdateTarget();
+    }
+
+    public void UpdateTarget()
+    {
         if (initRectTarget == RefRectTarget.parent) refRect = transform.parent as RectTransform;
         else if (initRectTarget == RefRectTarget.self) refRect = transform as RectTransform;
     }

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CKF_AttractionIconList : MonoBehaviour
 {
@@ -25,6 +26,16 @@ public class CKF_AttractionIconList : MonoBehaviour
     private bool isRevealing = false;
 
     private float revealTimer;
+    [System.Serializable]
+    public struct Exposed
+    {
+        public RectTransform parent;
+        public GameObject prefab;
+    }
+
+    public List<Exposed> ExposedTargets = new();
+
+    public UnityEvent<int> getCount;
 
     public void Awake()
     {
@@ -67,6 +78,11 @@ public class CKF_AttractionIconList : MonoBehaviour
             tracked[^2].size.SetTarget(0.5f);
             ElementUpdate();
         }
+        foreach (var e in ExposedTargets)
+        {
+            Instantiate(e.prefab, e.parent).GetComponent<CKF_ImageElement>().image.sprite = mapIcons[key].icon;
+        }
+        getCount?.Invoke(tracked.Count);
     }
 
     public void ElementUpdate()
@@ -76,7 +92,7 @@ public class CKF_AttractionIconList : MonoBehaviour
             float curAnchor = settedHeight / settedWidth,
                 contract_dA = (1 - curAnchor - curAnchor) / (tracked.Count - 1),
                 dA = 0.5f * curAnchor;
-            if (tracked.Count > 2 && contract_dA < dA)
+            if (tracked.Count >= jumpIndex && contract_dA < dA)
             {
                 dA = contract_dA;
                 if (!isRevealing)
@@ -99,11 +115,12 @@ public class CKF_AttractionIconList : MonoBehaviour
 
     private int nextReveal, currentReveal;
 
+    [Min(2)]public int jumpIndex = 3;
     public void CallRevealed()
     {
         revealTimer = revealInterval;
         
-        if (tracked.Count == 3)
+        if (tracked.Count == jumpIndex)
         {
             tracked[0].reveal.setTimer(revealInterval);
             return;
@@ -114,11 +131,11 @@ public class CKF_AttractionIconList : MonoBehaviour
             nextReveal = 1;
             tracked[0].reveal.setTimer(revealInterval);
         }
-        else if (nextReveal == tracked.Count - 3)
+        else if (nextReveal == tracked.Count - jumpIndex)
         {
-            currentReveal = tracked.Count - 3;
-            nextReveal = tracked.Count - 4;
-            tracked[^3].reveal.setTimer(revealInterval);
+            currentReveal = tracked.Count - jumpIndex;
+            nextReveal = tracked.Count - jumpIndex - 1;
+            tracked[^jumpIndex].reveal.setTimer(revealInterval);
         }
         else
         {

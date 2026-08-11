@@ -482,7 +482,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6806656792630429206}
         m_TargetAssemblyTypeName: CKF_RectTransform, Assembly-CSharp
-        m_MethodName: SetAnchorMinMaxX
+        m_MethodName: SetAnchorMinMaxY
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

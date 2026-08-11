@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+[RequireComponent(typeof(CKF_RectTransform))]
 public class CKF_RefImageContain : MonoBehaviour
 {
     [GetSelfField] public CKF_RectTransform selfRect;
@@ -16,6 +14,7 @@ public class CKF_RefImageContain : MonoBehaviour
 
     private void Update()
     {
+        if (width == 0 || height == 0) UpdateImage();
         if (width == 0 || height == 0) return;
 
         float dX = target.rect.width * height, dY = target.rect.height * width;

@@ -90,7 +90,6 @@ public class CKF_AttractionImageController : MonoBehaviour
     }
     public void AddTexture(string key)
     {
-        Debug.Log("Added: " + key);
         buffer.Add(key);
     }
 }

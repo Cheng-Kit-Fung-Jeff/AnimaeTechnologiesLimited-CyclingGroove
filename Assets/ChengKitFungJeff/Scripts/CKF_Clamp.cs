@@ -7,17 +7,17 @@ public class CKF_Clamp : MonoBehaviour
 {
     public bool clampLower, clampUpper;
     public float lower, upper;
-
+    [ReadonlyField] public float value;
     public UnityEvent<float> getValue = new();
     public UnityEvent eventLower, eventUpper;
 
     public void GetValue(float value)
     {
-        float res = value;
+        this.value = value;
         bool flagLower = false, flagUpper = true;
-        if(clampLower && value <= lower) { flagLower = true; res = lower; }
-        if(clampUpper && value >= upper) { flagUpper = true;  res = upper; }
-        getValue?.Invoke(res);
+        if(clampLower && this.value <= lower) { flagLower = true; this.value = lower; }
+        if(clampUpper && this.value >= upper) { flagUpper = true; this.value = upper; }
+        getValue?.Invoke(this.value);
         if (flagLower) eventLower?.Invoke();
         if (flagUpper) eventUpper?.Invoke();
 

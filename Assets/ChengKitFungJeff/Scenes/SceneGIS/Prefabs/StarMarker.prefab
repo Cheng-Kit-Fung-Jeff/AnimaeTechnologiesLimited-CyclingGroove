@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 64d06656f3ede9a4db886c7b49d3fe08, type: 2}
+  m_Material: {fileID: 2100000, guid: 1077c1761077646488a00b708ffffe3b, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: c41cebee865cc5443b3c1429c4ae052e, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.14901961}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -648,7 +648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 64d06656f3ede9a4db886c7b49d3fe08, type: 2}
+  m_Material: {fileID: 2100000, guid: 1077c1761077646488a00b708ffffe3b, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -724,7 +724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 64d06656f3ede9a4db886c7b49d3fe08, type: 2}
+  m_Material: {fileID: 2100000, guid: 1077c1761077646488a00b708ffffe3b, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -1002,7 +1002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 64d06656f3ede9a4db886c7b49d3fe08, type: 2}
+  m_Material: {fileID: 2100000, guid: 1077c1761077646488a00b708ffffe3b, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -1034,6 +1034,9 @@ GameObject:
   - component: {fileID: 3213296928978054719}
   - component: {fileID: 7068437274811585881}
   - component: {fileID: 6477461428155168372}
+  - component: {fileID: 3229394658453602349}
+  - component: {fileID: -448534683333033799}
+  - component: {fileID: 5812646001321255672}
   m_Layer: 0
   m_HasEditorInfo: 1
   m_Name: StarMarker
@@ -1297,6 +1300,96 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3229394658453602349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7099958023149063667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd4db2a39f2ff4744925b04f3029a45a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: StarMarkerScale
+  get:
+    m_PersistentCalls:
+      m_Calls: []
+  getInt:
+    m_PersistentCalls:
+      m_Calls: []
+  getFloat:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -448534683333033799}
+        m_TargetAssemblyTypeName: CKF_MAD, Assembly-CSharp
+        m_MethodName: GetValue
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-448534683333033799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7099958023149063667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1379816489b84c4f93209f610df3e28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mult: 2
+  add: 0
+  lastValue: 0
+  lastResult: 0
+  getValue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5812646001321255672}
+        m_TargetAssemblyTypeName: CKF_RectTransform, Assembly-CSharp
+        m_MethodName: SetLocalScaleX
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5812646001321255672}
+        m_TargetAssemblyTypeName: CKF_RectTransform, Assembly-CSharp
+        m_MethodName: SetLocalScaleY
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5812646001321255672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7099958023149063667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af4c13734faeaf847820c7e9f2e37afb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selfRect: {fileID: 4864650638054375232}
 --- !u!1 &7725953285355098595
 GameObject:
   m_ObjectHideFlags: 0
@@ -1355,7 +1448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 64d06656f3ede9a4db886c7b49d3fe08, type: 2}
+  m_Material: {fileID: 2100000, guid: 1077c1761077646488a00b708ffffe3b, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}

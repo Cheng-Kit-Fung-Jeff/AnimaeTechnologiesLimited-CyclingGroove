@@ -38,7 +38,8 @@ public class CKF_CommentListInterface : MonoBehaviour
 
         int poolIndex = UnityEngine.Random.Range(0, mapState[key].pool.Count);
         int commentIndex = mapState[key].pool[poolIndex];
-        mapState[key].pool.Remove(poolIndex);
+        Debug.Log(key+":"+ commentIndex);
+        mapState[key].pool.RemoveAt(poolIndex);
         list.AddComment(this.key, mapState[key].comment[commentIndex]);
     }
 }

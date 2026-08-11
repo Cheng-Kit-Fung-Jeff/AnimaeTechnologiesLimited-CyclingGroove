@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -8,9 +7,9 @@ public class CKF_CommentElement : MonoBehaviour
 {
     public Image icon;
 
-    public CKF_RectRefHeight refHeight;
-
-    public CKF_RectTransform rectTransform;
+    public List<CKF_RectRefHeight> rectRefHeight;
+    public List<CKF_RectRefWidth> rectRefWidth;
+    public List<CKF_GetRectHeight> getRectHeight;
 
     public CKF_IntState indexState; // base one
 

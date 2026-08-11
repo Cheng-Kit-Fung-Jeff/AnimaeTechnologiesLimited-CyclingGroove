@@ -18,7 +18,7 @@ public class CKF_RectRefWidth : MonoBehaviour
     }
     public void Update()
     {
-        if (setted != refRect.rect.width)
+        if (refRect != null && setted != refRect.rect.width)
         {
             setted = refRect.rect.width;
             Apply();

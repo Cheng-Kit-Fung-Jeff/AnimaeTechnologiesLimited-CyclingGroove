@@ -4,11 +4,11 @@ using UnityEngine;
 public class CKF_CommentList : MonoBehaviour
 {
     [Min(1)] public int listSize = 1;
-    private float iSizeRatio = 0; // sets wrapper and contents
+    public RectTransform refRect;
 
-    public CKF_RectMask2D counterWrapper;
+    //public CKF_RectMask2D counterWrapper;
 
-    public GameObject element, dummy;
+    public GameObject element;
     public RectTransform CommentLayer;
 
     public List<ElementProfile> elementProfiles = new();
@@ -20,24 +20,12 @@ public class CKF_CommentList : MonoBehaviour
         public Sprite icon;
     }
 
-    private readonly List<CKF_CommentElement> listElements = new(); // bubble sorting is best;
-
+    private readonly List<CKF_CommentElement> listElements = new();
     private void Awake()
     {
         foreach (var p in elementProfiles)
         {
             mapElemenProfiles.Add(p.key, p);
-        }
-
-        // ex listsize =  4
-        // fading, shown, shown, shown
-        iSizeRatio = 1 / (float)listSize;
-        counterWrapper.SetSoftnessY(iSizeRatio);
-        for (int i = 0; i++ < listSize;)
-        {
-            listElements.Add(Instantiate(dummy, CommentLayer).GetComponent<CKF_CommentElement>());
-            listElements[^1].refHeight.refRect = CommentLayer;
-            listElements[^1].refHeight.SetRatio(iSizeRatio);
         }
     }
 
@@ -45,19 +33,37 @@ public class CKF_CommentList : MonoBehaviour
     {
         if (!mapElemenProfiles.ContainsKey(key)) return;
         CKF_CommentElement newEle = Instantiate(element, CommentLayer).GetComponent<CKF_CommentElement>();
-        newEle.refHeight.refRect = CommentLayer;
-        newEle.refHeight.SetRatio(iSizeRatio);
+        foreach (var c in newEle.rectRefWidth)
+        {
+            c.refRect = refRect;
+            c.Apply();
+        }
+        foreach (var c in newEle.rectRefHeight)
+        {
+            c.refRect = refRect;
+            c.Apply();
+        }
+        /*
+        foreach (var c in newEle.getRectWidth)
+        {
+            c.refRect = refRect;
+            c.Apply();
+        }
+        */
+        foreach (var c in newEle.getRectHeight)
+        {
+            c.refRect = refRect;
+            c.Apply();
+        }
         newEle.transform.SetAsLastSibling();
         newEle.icon.sprite = mapElemenProfiles[key].icon;
         newEle.text.text = comment;
 
         listElements.Add(newEle);
-        float targetPos = iSizeRatio;
         if (listElements.Count > listSize) { Destroy(listElements[0].gameObject); listElements.RemoveAt(0); }
         for (int i = listElements.Count, v = 1; --i > 0; v++)
         {
             if (newEle.indexState != null) listElements[i].indexState.GetValue(v);
-            targetPos += iSizeRatio;
         }
     }
 }

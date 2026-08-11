@@ -1645,6 +1645,7 @@ GameObject:
   - component: {fileID: 794240804}
   - component: {fileID: 794240803}
   - component: {fileID: 794240806}
+  - component: {fileID: 794240807}
   m_Layer: 5
   m_HasEditorInfo: 1
   m_Name: StreamingAnchor
@@ -1750,6 +1751,37 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
+--- !u!114 &794240807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794240801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1379816489b84c4f93209f610df3e28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mult: -1
+  add: 2
+  lastValue: 0
+  lastResult: 0
+  getValue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 794240805}
+        m_TargetAssemblyTypeName: CKF_RectTransform, Assembly-CSharp
+        m_MethodName: SetAnchorMinMaxY
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &800508792
 GameObject:
   m_ObjectHideFlags: 0
@@ -67833,6 +67865,18 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 700396901271156560}
+        m_TargetAssemblyTypeName: CKF_MAD, Assembly-CSharp
+        m_MethodName: GetValue
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 794240807}
         m_TargetAssemblyTypeName: CKF_MAD, Assembly-CSharp
         m_MethodName: GetValue
         m_Mode: 0

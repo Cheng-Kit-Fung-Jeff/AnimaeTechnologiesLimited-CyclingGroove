@@ -26,16 +26,18 @@ public class CKF_PathSprite : MonoBehaviour
             {
                 pathRect.SetRotation(Quaternion.LookRotation(forward, settedA - settedB));
                 pathRect.SetHeight((Vector3.Distance(settedA, settedB) + endPointRadius) / settedLocalScaleY);
+                image.enabled = true;
             }
             else
             {
-                pathRect.SetHeight(0);
+                image.enabled = false;
             }
         }
     }
 
     public void SetWidth(float value)
     {
+        if (value == 0) { Debug.Log($"path connecting {nodeA.name}, {nodeB.name} attempted to set path width as 0");  return;}
         pathRect.SetLocalScaleX(value / pathRect.GetWidth());
         pathRect.SetLocalScaleY(pathRect.GetLocalScale().x);
     }

@@ -18,7 +18,7 @@ public class CKF_AttractionIconList : MonoBehaviour
     public List<Profile> icons = new();
     public Dictionary<string, Profile> mapIcons = new();
 
-    public List<CKF_AttractionIconElement> tracked = new();
+    private List<CKF_AttractionIconElement> tracked = new();
 
     private float settedWidth = float.NaN, settedHeight = float.NaN;
 

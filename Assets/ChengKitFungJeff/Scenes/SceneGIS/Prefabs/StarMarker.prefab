@@ -1312,7 +1312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd4db2a39f2ff4744925b04f3029a45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: StarMarkerScale
+  key: OverlayCameraScale
   get:
     m_PersistentCalls:
       m_Calls: []

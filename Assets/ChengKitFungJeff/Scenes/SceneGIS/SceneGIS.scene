@@ -3608,7 +3608,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1066466132}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -23472,7 +23472,7 @@ MonoBehaviour:
   distB: 0
   pathA: {fileID: 0}
   pathB: {fileID: 0}
-  pathWidth: 0
+  pathWidth: 0.01
   pathInnerColor: {r: 1, g: 1, b: 1, a: 0}
   pathOuterColor: {r: 0.6498537, g: 0, b: 1, a: 0}
   glowA: {fileID: 0}
@@ -55372,6 +55372,18 @@ MonoBehaviour:
   eventEnd:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 73798989851030178}
+        m_TargetAssemblyTypeName: CKF_PathInteractActor, Assembly-CSharp
+        m_MethodName: SetInteractionEnable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 6207388283747810509}
         m_TargetAssemblyTypeName: CKF_MAD, Assembly-CSharp
         m_MethodName: SetMult
@@ -55420,10 +55432,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2876100516429406508}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 5945108618648697293}
+        m_TargetAssemblyTypeName: CKF_TimeLerp, Assembly-CSharp
+        m_MethodName: SetTarget
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -55433,66 +55445,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 4619098418234303248}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 1
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4612712242049703365}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 1
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1703856399055680909}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 1
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 5427966854521704655}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 1
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3466114982153934738}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 1
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -68218,7 +68170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 160abef2b1824384da69d7efcbbac5a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: StarMarkerScale
+  key: OverlayCameraScale
 --- !u!114 &4681741754772572179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74256,7 +74208,7 @@ MonoBehaviour:
   distB: 0
   pathA: {fileID: 0}
   pathB: {fileID: 0}
-  pathWidth: 0
+  pathWidth: 0.01
   pathInnerColor: {r: 1, g: 1, b: 1, a: 0}
   pathOuterColor: {r: 0.6498537, g: 0, b: 1, a: 0}
   glowA: {fileID: 0}
@@ -77758,11 +77710,10 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: ecf63a767f337e1489110cb7b8d4fa4f, type: 3}
   - key: PalaceMuseum
     icon: {fileID: 21300000, guid: d8c870c8512f18b45b9318f31a7f9c0f, type: 3}
-  tracked: []
   revealInterval: 0.4
   ExposedTargets:
   - parent: {fileID: 336625464}
-    prefab: {fileID: 1778478728627522158, guid: 1452125d641ea8a42aaf5f58810c4aae,
+    prefab: {fileID: 1778478728627522158, guid: 3a7fcf5fd174b2140861d5b03d0015f6,
       type: 3}
   getCount:
     m_PersistentCalls:
@@ -78016,7 +77967,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 0.2
-  margin: {x: 0.1, y: 0, z: 0.1}
+  scaleLeft: 1.5
+  scaleRight: 1.1
+  scaleTop: 1.1
+  scaleBottom: 1.1
   positionOffset: {x: 0, y: 1, z: 0}
   position: {x: 0, y: 0, z: 0}
   eventResize:

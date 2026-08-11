@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 2579632566392038503}
   - component: {fileID: 6641106616495733713}
   - component: {fileID: 5846418346217427037}
-  - component: {fileID: 990162403876820704}
   - component: {fileID: 8492204148751231142}
+  - component: {fileID: 990162403876820704}
+  - component: {fileID: 2065766670649592282}
   m_Layer: 5
   m_HasEditorInfo: 1
   m_Name: Text (TMP)
@@ -167,6 +168,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selfRect: {fileID: 608377913092131924}
+--- !u!114 &8492204148751231142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2687899760659277162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25f75cb2ddbb7314bbcf0fec2780bbc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initRectTarget: 0
+  refRect: {fileID: 0}
+  ratio: 0.2
+  preservePixel: 0
+  ignoreRefScale: 1
+  selfRect: {fileID: 5846418346217427037}
 --- !u!114 &990162403876820704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,7 +218,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8492204148751231142
+      - m_Target: {fileID: 2065766670649592282}
+        m_TargetAssemblyTypeName: CKF_MAD, Assembly-CSharp
+        m_MethodName: GetValue
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2065766670649592282
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,15 +239,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 2687899760659277162}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25f75cb2ddbb7314bbcf0fec2780bbc5, type: 3}
+  m_Script: {fileID: 11500000, guid: e1379816489b84c4f93209f610df3e28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initRectTarget: 0
-  refRect: {fileID: 0}
-  ratio: 0.2
-  preservePixel: 0
-  ignoreRefScale: 1
-  selfRect: {fileID: 5846418346217427037}
+  mult: 0.5
+  add: 0
+  lastValue: 0
+  lastResult: 0
+  getValue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1045427573963380929}
+        m_TargetAssemblyTypeName: CKF_LayoutGroup, Assembly-CSharp
+        m_MethodName: SetPaddingTop
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3227294370704907918
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,6 +274,7 @@ GameObject:
   - component: {fileID: 4374563421739501751}
   - component: {fileID: 6269016145720152694}
   - component: {fileID: 6404442716582554604}
+  - component: {fileID: 1045427573963380929}
   m_Layer: 5
   m_HasEditorInfo: 1
   m_Name: TextWrapper
@@ -336,6 +381,19 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
+--- !u!114 &1045427573963380929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3227294370704907918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 070b6b967747a7b4983cb5d7f75805f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selfLayout: {fileID: 6404442716582554604}
 --- !u!1 &3846731473045139852
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,19 +565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Event:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 9123669852329498656}
-        m_TargetAssemblyTypeName: CKF_UISetDirty, Assembly-CSharp
-        m_MethodName: SetDirty
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 6015413711704684882}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.RectTransform, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &5193365468925649687
 GameObject:
   m_ObjectHideFlags: 0

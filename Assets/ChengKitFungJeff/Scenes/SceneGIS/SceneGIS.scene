@@ -728,8 +728,6 @@ GameObject:
   - component: {fileID: 794240804}
   - component: {fileID: 794240803}
   - component: {fileID: 794240806}
-  - component: {fileID: 794240808}
-  - component: {fileID: 794240807}
   m_Layer: 5
   m_HasEditorInfo: 1
   m_Name: StreamingAnchor
@@ -835,95 +833,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
---- !u!114 &794240807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 794240801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9cd2bd83c651124d852fea0e24b92a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  getValue:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 794240808}
-        m_TargetAssemblyTypeName: CKF_UISetDirty, Assembly-CSharp
-        m_MethodName: SetDirty
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1200723074}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.RectTransform, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 794240808}
-        m_TargetAssemblyTypeName: CKF_UISetDirty, Assembly-CSharp
-        m_MethodName: SetDirty
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 991265810}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.RectTransform, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 794240808}
-        m_TargetAssemblyTypeName: CKF_UISetDirty, Assembly-CSharp
-        m_MethodName: SetDirty
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 794240802}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.RectTransform, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 794240808}
-        m_TargetAssemblyTypeName: CKF_UISetDirty, Assembly-CSharp
-        m_MethodName: SetImmediate
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 794240802}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.RectTransform, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 794240808}
-        m_TargetAssemblyTypeName: CKF_UISetDirty, Assembly-CSharp
-        m_MethodName: SetImmediate
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2086340143}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.RectTransform, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  enable: 1
-  multiplier: 1
---- !u!114 &794240808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 794240801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a618bc2a4093c18439e2a3603b3da70c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &800508792
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,7 +1262,7 @@ MonoBehaviour:
     comment:
     - Wow so quick
     - I can ride a bike too
-    - Your riding is worth a stella
+    - Your riding is stella
   - state: DrinkWater
     comment:
     - Dad said you should drink water <sprite name=WaterBottle>
@@ -2550,8 +2459,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1066466133}
   m_HandleRect: {fileID: 1066466132}
   m_Direction: 0
-  m_Value: 1
-  m_Size: 0.9999999
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -61434,6 +61343,7 @@ GameObject:
   - component: {fileID: 7364763553270470835}
   - component: {fileID: 4643176012055689272}
   - component: {fileID: 1642807902894064003}
+  - component: {fileID: 7364763553270470836}
   m_Layer: 0
   m_HasEditorInfo: 1
   m_Name: AthleticBeginController
@@ -64433,8 +64343,8 @@ RectTransform:
   - {fileID: 4779519643094866416}
   - {fileID: 7950405192261165100}
   - {fileID: 7034379964177479091}
-  - {fileID: 2861838454195227167}
   - {fileID: 794240802}
+  - {fileID: 2861838454195227167}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -91755,6 +91665,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 7364763553270470836}
+          m_TargetAssemblyTypeName: CKF_Broadcast, Assembly-CSharp
+          m_MethodName: Call
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - key: AthleticEnd
     Event:
       m_PersistentCalls:
@@ -92962,8 +92884,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.5, y: 0}
-  m_SizeDelta: {x: -5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -8, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6623610654791203709
 MonoBehaviour:
@@ -94050,11 +93972,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 56.7
+  m_fontSize: 54.9
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
+  m_fontSizeMin: 0
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
@@ -103552,6 +103474,19 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   paused: 0
+--- !u!114 &7364763553270470836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4346321676108155955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 160abef2b1824384da69d7efcbbac5a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: StarMarkerLerp
 --- !u!114 &7366405494408853310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120743,7 +120678,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00012207031, y: 0}
+  m_AnchoredPosition: {x: -0.00024414062, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8719793330391766957

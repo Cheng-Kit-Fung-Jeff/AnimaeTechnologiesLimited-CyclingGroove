@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CKF_CommentList : MonoBehaviour
 {
@@ -33,6 +34,9 @@ public class CKF_CommentList : MonoBehaviour
     {
         if (!mapElemenProfiles.ContainsKey(key)) return;
         CKF_CommentElement newEle = Instantiate(element, CommentLayer).GetComponent<CKF_CommentElement>();
+        newEle.transform.SetAsLastSibling();
+        newEle.icon.sprite = mapElemenProfiles[key].icon;
+        newEle.text.text = comment;
         foreach (var c in newEle.rectRefWidth)
         {
             c.refRect = refRect;
@@ -55,9 +59,8 @@ public class CKF_CommentList : MonoBehaviour
             c.refRect = refRect;
             c.Apply();
         }
-        newEle.transform.SetAsLastSibling();
-        newEle.icon.sprite = mapElemenProfiles[key].icon;
-        newEle.text.text = comment;
+        LayoutRebuilder.ForceRebuildLayoutImmediate(CommentLayer);
+
 
         listElements.Add(newEle);
         if (listElements.Count > listSize) { Destroy(listElements[0].gameObject); listElements.RemoveAt(0); }

@@ -17,6 +17,11 @@ public class CKF_Counter : MonoBehaviour
         counter = value;
         getValue?.Invoke(counter);
     }
+
+    public void SetIncrement(int value)
+    {
+        counter += value;
+    }
     public void Increment(int value)
     {
         counter += value;

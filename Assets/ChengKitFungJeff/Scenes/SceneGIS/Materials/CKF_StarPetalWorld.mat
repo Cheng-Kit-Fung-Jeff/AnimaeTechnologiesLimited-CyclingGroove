@@ -107,8 +107,8 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _IntensityBlack: 2
-    - _IntensityWhite: 2
+    - _IntensityBlack: 4
+    - _IntensityWhite: 4
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005

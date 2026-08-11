@@ -3607,8 +3607,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1066466133}
   m_HandleRect: {fileID: 1066466132}
   m_Direction: 0
-  m_Value: 1
-  m_Size: 1
+  m_Value: 0
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -14020,8 +14020,13 @@ GameObject:
   - component: {fileID: 2596094079276093055}
   - component: {fileID: 819465378749655329}
   - component: {fileID: 2363781947611364548}
+  - component: {fileID: 8891721971094215941}
   - component: {fileID: 814493817218109274}
   - component: {fileID: 5949301648650261666}
+  - component: {fileID: 8891721971094215940}
+  - component: {fileID: 8891721971094215939}
+  - component: {fileID: 8891721971094215938}
+  - component: {fileID: 8891721971094215937}
   m_Layer: 5
   m_HasEditorInfo: 1
   m_Name: TrafficLightWrapper
@@ -47012,52 +47017,6 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 2
   m_ConstraintCount: 2
---- !u!114 &3134965617527391859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8507877342489235351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e2a952588f2ce945a056d3cfbc44479, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 6690832343244809964}
-  floatDecimal: 1
-  units:
-  - name: 
-    value: 1
-    range: 100
-    lower: 0
-  - name: ' K'
-    value: 1000
-    range: 99900
-    lower: 0
-  - name: ' M'
-    value: 1000000
-    range: 99900000
-    lower: 0
-  - name: ' B'
-    value: 1e+9
-    range: 0
-    lower: 0
-  getValue:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2920464836698385369}
-        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!224 &3135261024088189944
 RectTransform:
   m_ObjectHideFlags: 0
@@ -54606,7 +54565,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 4, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &3721559202197875290
 MonoBehaviour:
@@ -60850,6 +60809,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 8891721971094215938}
+          m_TargetAssemblyTypeName: CKF_IntState, Assembly-CSharp
+          m_MethodName: GetValue
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0.5
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - key: StartGame
     Event:
       m_PersistentCalls:
@@ -60966,10 +60937,10 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 4561321063528253692}
-          m_TargetAssemblyTypeName: CKF_ViewCountController, Assembly-CSharp
-          m_MethodName: Multiply
-          m_Mode: 4
+        - m_Target: {fileID: 8891721971094215937}
+          m_TargetAssemblyTypeName: CKF_CallState, Assembly-CSharp
+          m_MethodName: CallEvent
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -66595,7 +66566,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111c19cbe942eed41b3f6bf8524a6f5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  counter: {fileID: 3134965617527391859}
   distance: {fileID: 4574847836323355994}
   totalTimePassed: {fileID: 9117376736014553313}
   distanceFactor: 1
@@ -66603,7 +66573,19 @@ MonoBehaviour:
   viewCount: 0
   getViewCount:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8507877342489235352}
+        m_TargetAssemblyTypeName: CKF_SetTextSI, Assembly-CSharp
+        m_MethodName: SetInt
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &4564203575790772833
 RectTransform:
   m_ObjectHideFlags: 0
@@ -85011,6 +84993,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 8891721971094215939}
+          m_TargetAssemblyTypeName: CKF_Counter, Assembly-CSharp
+          m_MethodName: Increment
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0.5
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &5950048242814497283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94615,7 +94609,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -8, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6623610654791203709
 MonoBehaviour:
@@ -95702,7 +95696,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 54.9
+  m_fontSize: 0
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -119909,7 +119903,7 @@ GameObject:
   - component: {fileID: 6623336315037288976}
   - component: {fileID: 1153990573407087187}
   - component: {fileID: 6690832343244809964}
-  - component: {fileID: 3134965617527391859}
+  - component: {fileID: 8507877342489235352}
   m_Layer: 5
   m_HasEditorInfo: 1
   m_Name: ViewCountText
@@ -119918,6 +119912,43 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8507877342489235352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8507877342489235351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46da5389787526c4a957f7474cd140e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 6690832343244809964}
+  significant: 3
+  unit: 
+  units:
+  - name: 
+    value: 1
+  - name: K
+    value: 1000
+  - name: M
+    value: 1000000
+  getValue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2920464836698385369}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &8508661827900463962
 RectTransform:
   m_ObjectHideFlags: 0
@@ -124496,6 +124527,239 @@ MonoBehaviour:
     lower: 0
     upper: 0
   index: 0
+--- !u!114 &8891721971094215937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633315613351266751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 463388cfefcab5c4d97dd31d3152d5d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: S
+  events:
+  - key: A
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4561321063528253692}
+          m_TargetAssemblyTypeName: CKF_ViewCountController, Assembly-CSharp
+          m_MethodName: Multiply
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: -5
+            m_FloatArgument: 1.8
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - key: B
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4561321063528253692}
+          m_TargetAssemblyTypeName: CKF_ViewCountController, Assembly-CSharp
+          m_MethodName: Multiply
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: -5
+            m_FloatArgument: 1.6
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - key: C
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4561321063528253692}
+          m_TargetAssemblyTypeName: CKF_ViewCountController, Assembly-CSharp
+          m_MethodName: Multiply
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: -5
+            m_FloatArgument: 1.4
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - key: S
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4561321063528253692}
+          m_TargetAssemblyTypeName: CKF_ViewCountController, Assembly-CSharp
+          m_MethodName: Multiply
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: -5
+            m_FloatArgument: 2
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &8891721971094215938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633315613351266751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cd8c4c7e96e2c14fab4b978e35e488d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  current: 0
+  init: 0
+  jumpState: 1
+  profiles:
+  - value: 0
+    eventIn:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8891721971094215937}
+          m_TargetAssemblyTypeName: CKF_CallState, Assembly-CSharp
+          m_MethodName: SetState
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: S
+            m_BoolArgument: 0
+          m_CallState: 2
+    eventOut:
+      m_PersistentCalls:
+        m_Calls: []
+    lower: 0
+    upper: 0
+  - value: 1
+    eventIn:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8891721971094215937}
+          m_TargetAssemblyTypeName: CKF_CallState, Assembly-CSharp
+          m_MethodName: SetState
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: A
+            m_BoolArgument: 0
+          m_CallState: 2
+    eventOut:
+      m_PersistentCalls:
+        m_Calls: []
+    lower: 0
+    upper: 0
+  - value: 2
+    eventIn:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8891721971094215937}
+          m_TargetAssemblyTypeName: CKF_CallState, Assembly-CSharp
+          m_MethodName: SetState
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: B
+            m_BoolArgument: 0
+          m_CallState: 2
+    eventOut:
+      m_PersistentCalls:
+        m_Calls: []
+    lower: 0
+    upper: 0
+  - value: 0
+    eventIn:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8891721971094215937}
+          m_TargetAssemblyTypeName: CKF_CallState, Assembly-CSharp
+          m_MethodName: SetState
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: C
+            m_BoolArgument: 0
+          m_CallState: 2
+    eventOut:
+      m_PersistentCalls:
+        m_Calls: []
+    lower: 0
+    upper: 0
+  index: 0
+--- !u!114 &8891721971094215939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633315613351266751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe7edca66d5edf44ba7adcb11b011f3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  getValue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8891721971094215938}
+        m_TargetAssemblyTypeName: CKF_IntState, Assembly-CSharp
+        m_MethodName: GetValue
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  counter: 0
+--- !u!114 &8891721971094215940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633315613351266751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d135b9dde377cde4f9d14949294b8e50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: The below CKF_Counter counts the number of badInputs
+--- !u!114 &8891721971094215941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633315613351266751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d135b9dde377cde4f9d14949294b8e50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: The below CKF_Counter counts the state set by the above CKF_Timer
 --- !u!224 &8892533999860151332
 RectTransform:
   m_ObjectHideFlags: 0
@@ -128200,8 +128464,8 @@ GameObject:
   - component: {fileID: 8611455707758340419}
   - component: {fileID: 4554530671788240988}
   - component: {fileID: 1586114499222785141}
-  - component: {fileID: 9143403390451375206}
   - component: {fileID: 9143403390451375205}
+  - component: {fileID: 9143403390451375206}
   m_Layer: 5
   m_HasEditorInfo: 1
   m_Name: CounterTextWrapper
@@ -128240,8 +128504,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90d257811e4b7e84d98fe8411a29d01c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refRect: {fileID: 3720990528318533171}
-  ratio: 1
+  refRect: {fileID: 794240802}
+  ratio: 0.05
   preservePixels: 0
 --- !u!224 &9144037861508813276
 RectTransform:

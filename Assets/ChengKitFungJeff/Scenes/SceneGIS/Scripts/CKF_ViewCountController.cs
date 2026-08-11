@@ -1,12 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class CKF_ViewCountController : MonoBehaviour
 {
-    public CKF_SetText counter;
-
     public CKF_CountFloat distance, totalTimePassed;
 
 
@@ -14,7 +10,7 @@ public class CKF_ViewCountController : MonoBehaviour
 
     private float settedDistance, settedTotalTimePassed;
 
-    public UnityEvent<float> getViewCount = new();
+    public UnityEvent<int> getViewCount = new();
 
     private void Update()
     {
@@ -22,7 +18,7 @@ public class CKF_ViewCountController : MonoBehaviour
         settedDistance = distance.counter;
         viewCount += (Mathf.Floor(totalTimePassed.counter) - settedTotalTimePassed) * timePassFactor;
         settedTotalTimePassed = Mathf.Floor(totalTimePassed.counter);
-        counter.SetInt((int)viewCount);
+        getViewCount?.Invoke((int)viewCount);
     }
 
     public void Multiply(float value)
@@ -32,6 +28,6 @@ public class CKF_ViewCountController : MonoBehaviour
 
     public void GetViewCount()
     {
-        getViewCount?.Invoke(viewCount);
+        getViewCount?.Invoke((int)viewCount);
     }
 }

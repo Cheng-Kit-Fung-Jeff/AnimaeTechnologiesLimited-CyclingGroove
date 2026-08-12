@@ -211,6 +211,18 @@ public static class Fn
         };
     }
 
+    public static void ShuffleFisherYates<T>(List<T> l)
+    {
+        for (int i = l.Count; i > 1;)
+        {
+            int index = UnityEngine.Random.Range(0, i);
+            --i;
+            T t = l[index];
+            l[index] = l[i];
+            l[i] = t;
+        }
+    }
+
     public static float[][] MatrixTp(float[][] m)
     {
         if (m.Length == 0 || m[0].Length == 0) return Array.Empty<float[]>();

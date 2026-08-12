@@ -7,6 +7,7 @@ public class CKF_TimeVelocityScaleController : MonoBehaviour
     public CKF_CountFloat remainingTime, scaledRemainingTime;
     public CKF_DTime remainingTimeScaler;
     public CKF_MAD explorer, realDistance;
+    public List<CKF_MAD> scalersMAD = new();
     public CKF_MathDTime velocityTimeScaler;
 
     [Min(0)]public float initTime;
@@ -23,6 +24,7 @@ public class CKF_TimeVelocityScaleController : MonoBehaviour
         explorer.mult = newScale;
         realDistance.mult = newScale;
         velocityTimeScaler.multiplier = newScale;
+        foreach (var s in scalersMAD) s.mult = newScale;
     }
 
     public void IncrementFactor(float value)

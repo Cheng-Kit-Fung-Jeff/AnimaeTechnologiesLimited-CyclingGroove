@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45dcee51f83a0e041bee9afbf977ecc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selfRectController: {fileID: 6540765567986826682}
   xRatio: 0.5
   yRatio: 0.5
 --- !u!114 &6540765567986826682
@@ -179,9 +180,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a19a71fc788fa6143a1f9ee33006c1e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initRectTarget: 0
   refRect: {fileID: 3190138392564310364}
   ratio: 1
   preservePixel: 0
+  ignoreRefScale: 1
   selfRect: {fileID: 8688750909311628911}
 --- !u!114 &7223361834398722993
 MonoBehaviour:
@@ -195,9 +198,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25f75cb2ddbb7314bbcf0fec2780bbc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initRectTarget: 0
   refRect: {fileID: 3190138392564310364}
   ratio: 1
   preservePixel: 0
+  ignoreRefScale: 1
   selfRect: {fileID: 8688750909311628911}
 --- !u!222 &4737990659326048705
 CanvasRenderer:

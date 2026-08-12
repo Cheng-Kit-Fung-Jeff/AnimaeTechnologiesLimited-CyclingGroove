@@ -17,6 +17,7 @@ public class CKF_CounterList : MonoBehaviour, I_CKF_Reset
     {
         public string key;
         public Sprite icon;
+        public Material material;
     }
 
     private readonly Dictionary<string, int> listElementsIndex = new();
@@ -77,6 +78,7 @@ public class CKF_CounterList : MonoBehaviour, I_CKF_Reset
             CKF_CounterListElement newEle = Instantiate(element, counterWrapper.transform).GetComponent<CKF_CounterListElement>();
             newEle.transform.SetAsFirstSibling();
             newEle.icon.sprite = mapElemenProfiles[key].icon;
+            if (mapElemenProfiles[key].material != null) newEle.icon.material = mapElemenProfiles[key].material;
             newEle.refWidth.refRect = counterWrapper.transform as RectTransform;
             newEle.refHeight.refRect = counterWrapper.transform as RectTransform;
             newEle.refHeight.SetRatio(iSizeRatio);

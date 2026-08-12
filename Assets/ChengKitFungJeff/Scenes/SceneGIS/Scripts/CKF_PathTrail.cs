@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CKF_PathTrail : MonoBehaviour
@@ -43,14 +42,31 @@ public class CKF_PathTrail : MonoBehaviour
                     trail.Add(Instantiate(trailElement, pathLayer).GetComponent<CKF_PathTrailElement>());
                 trail[^1].selfPathRectSprite.nodeA = lastPathAnchor;
                 trail[^1].selfPathRectSprite.nodeB = newPathAnchor;
-                trail[^1].selfPathRectSprite.SetWidth(width);
-                trail[^1].selfPathRectSprite.SetInnerColor(innerColor);
-                trail[^1].selfPathRectSprite.SetOuterColor(outerColor);
-                trail[^1].width.SetMult(width);
-                trail[^1].widthLerp.setTimer(duration);
-                trail[^1].eventEnable?.Invoke();
+                if (notBroken)
+                {
+                    trail[^1].selfPathRectSprite.SetWidth(width);
+                    trail[^1].selfPathRectSprite.SetInnerColor(innerColor);
+                    trail[^1].selfPathRectSprite.SetOuterColor(outerColor);
+                    trail[^1].selfPathRectSprite.UpdateHeight();
+                    trail[^1].width.SetMult(width);
+                    trail[^1].widthLerp.setTimer(duration);
+                    trail[^1].eventEnable?.Invoke();
+                } 
+                else
+                {
+                    notBroken = true;
+                    trail[^1].width.GetValue(0);
+                    trail[^1].ceased = true;
+                }
             }
             lastPathAnchor = newPathAnchor;
         }
+    }
+
+    private bool notBroken = true;
+
+    private void OnDisable()
+    {
+        notBroken = false;
     }
 }

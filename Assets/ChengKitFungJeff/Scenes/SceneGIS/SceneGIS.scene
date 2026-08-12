@@ -4981,8 +4981,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1066466133}
   m_HandleRect: {fileID: 1066466132}
   m_Direction: 0
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.9999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5227,7 +5227,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 71.3
+  m_fontSize: 72
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -30411,9 +30411,9 @@ MonoBehaviour:
   pathLayer: {fileID: 6944485863551628288}
   trailElement: {fileID: 3039658892520299222, guid: 0e2a540c6454f4349b834a3d8e1f0c90,
     type: 3}
-  duration: 2
-  width: 4
-  minDistance: 0.01
+  duration: 1
+  width: 16
+  minDistance: 0.001
   innerColor: {r: 1, g: 0.33333334, b: 0.33333334, a: 1}
   outerColor: {r: 0.1, g: 0.1, b: 1, a: 1}
 --- !u!114 &1662145481201121923
@@ -107278,7 +107278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 160abef2b1824384da69d7efcbbac5a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: StarMarkerLerp
+  key: MarkerLerp
 --- !u!114 &7366405494408853310
 MonoBehaviour:
   m_ObjectHideFlags: 0

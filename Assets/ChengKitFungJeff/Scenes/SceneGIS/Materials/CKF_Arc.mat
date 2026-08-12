@@ -121,7 +121,7 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _IntensityBlack: 1
-    - _IntensityWhite: 4
+    - _IntensityWhite: 1
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005

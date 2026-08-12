@@ -41,11 +41,19 @@ public class CKF_SetTextSI : MonoBehaviour
             value /= v;
         }
         string nextText = value.ToString($"G{significant}");
+        int eIndex = nextText.IndexOf('e');
+        if (eIndex != -1)
+        {
+            int eNum = int.Parse(nextText.Substring(eIndex + 1, nextText.Length - eIndex));
+            nextText = nextText[..eIndex].Replace(".","");
+            nextText += new string('0',eNum - nextText.Length + 1);
+
+        }
         int dotIndex = nextText.IndexOf('.');
         int length = nextText.Length;
         if (dotIndex != -1) --length;
-        if (length < significant)
-            nextText += new string('0', significant - length);
+        if (length < significant && value != 0)
+            nextText += new string('0', significant - length); float[] t = new float[] { 1, 2 };
 
         nextText += u + unit;
         if(sign)nextText = '-' + nextText;

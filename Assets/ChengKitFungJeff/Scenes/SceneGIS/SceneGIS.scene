@@ -469,7 +469,7 @@ PrefabInstance:
     - target: {fileID: 5780698505143189073, guid: 8389545f522783647bb87bd265c62fe4,
         type: 3}
       propertyPath: eventInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: PalaceMuseum
+      value: Hong Kong cultural centre
       objectReference: {fileID: 0}
     - target: {fileID: 7099958023149063667, guid: 8389545f522783647bb87bd265c62fe4,
         type: 3}
@@ -636,6 +636,11 @@ PrefabInstance:
       propertyPath: eventInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5435415591384627846}
+    - target: {fileID: 5780698505143189073, guid: 8389545f522783647bb87bd265c62fe4,
+        type: 3}
+      propertyPath: eventInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Chung King Mansion
+      objectReference: {fileID: 0}
     - target: {fileID: 7099958023149063667, guid: 8389545f522783647bb87bd265c62fe4,
         type: 3}
       propertyPath: m_Name
@@ -2326,6 +2331,11 @@ PrefabInstance:
       propertyPath: eventInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5435415591384627846}
+    - target: {fileID: 5780698505143189073, guid: 8389545f522783647bb87bd265c62fe4,
+        type: 3}
+      propertyPath: eventInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Chung King Mansion
+      objectReference: {fileID: 0}
     - target: {fileID: 7099958023149063667, guid: 8389545f522783647bb87bd265c62fe4,
         type: 3}
       propertyPath: m_Name
@@ -3516,7 +3526,7 @@ PrefabInstance:
     - target: {fileID: 5780698505143189073, guid: 8389545f522783647bb87bd265c62fe4,
         type: 3}
       propertyPath: eventInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: PalaceMuseum
+      value: Elements
       objectReference: {fileID: 0}
     - target: {fileID: 7099958023149063667, guid: 8389545f522783647bb87bd265c62fe4,
         type: 3}
@@ -4971,8 +4981,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1066466133}
   m_HandleRect: {fileID: 1066466132}
   m_Direction: 0
-  m_Value: 1
-  m_Size: 0.99999994
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5217,7 +5227,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 71.3
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5523,7 +5533,7 @@ PrefabInstance:
     - target: {fileID: 5780698505143189073, guid: 8389545f522783647bb87bd265c62fe4,
         type: 3}
       propertyPath: eventInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: PalaceMuseum
+      value: Elements
       objectReference: {fileID: 0}
     - target: {fileID: 7099958023149063667, guid: 8389545f522783647bb87bd265c62fe4,
         type: 3}
@@ -5721,6 +5731,11 @@ PrefabInstance:
       propertyPath: eventInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5435415591384627846}
+    - target: {fileID: 5780698505143189073, guid: 8389545f522783647bb87bd265c62fe4,
+        type: 3}
+      propertyPath: eventInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Chung King Mansion
+      objectReference: {fileID: 0}
     - target: {fileID: 7099958023149063667, guid: 8389545f522783647bb87bd265c62fe4,
         type: 3}
       propertyPath: m_Name
@@ -5883,7 +5898,7 @@ PrefabInstance:
     - target: {fileID: 5780698505143189073, guid: 8389545f522783647bb87bd265c62fe4,
         type: 3}
       propertyPath: eventInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: PalaceMuseum
+      value: Elements
       objectReference: {fileID: 0}
     - target: {fileID: 7099958023149063667, guid: 8389545f522783647bb87bd265c62fe4,
         type: 3}
@@ -6149,7 +6164,7 @@ PrefabInstance:
     - target: {fileID: 5780698505143189073, guid: 8389545f522783647bb87bd265c62fe4,
         type: 3}
       propertyPath: eventInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: PalaceMuseum
+      value: Elements
       objectReference: {fileID: 0}
     - target: {fileID: 7099958023149063667, guid: 8389545f522783647bb87bd265c62fe4,
         type: 3}
@@ -6318,6 +6333,11 @@ PrefabInstance:
       propertyPath: eventInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5435415591384627846}
+    - target: {fileID: 5780698505143189073, guid: 8389545f522783647bb87bd265c62fe4,
+        type: 3}
+      propertyPath: eventInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Chung King Mansion
+      objectReference: {fileID: 0}
     - target: {fileID: 7099958023149063667, guid: 8389545f522783647bb87bd265c62fe4,
         type: 3}
       propertyPath: m_Name
@@ -6485,7 +6505,7 @@ PrefabInstance:
     - target: {fileID: 5780698505143189073, guid: 8389545f522783647bb87bd265c62fe4,
         type: 3}
       propertyPath: eventInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: PalaceMuseum
+      value: Hong Kong cultural centre
       objectReference: {fileID: 0}
     - target: {fileID: 7099958023149063667, guid: 8389545f522783647bb87bd265c62fe4,
         type: 3}
@@ -7156,6 +7176,11 @@ PrefabInstance:
       propertyPath: eventInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5435415591384627846}
+    - target: {fileID: 5780698505143189073, guid: 8389545f522783647bb87bd265c62fe4,
+        type: 3}
+      propertyPath: eventInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Chung King Mansion
+      objectReference: {fileID: 0}
     - target: {fileID: 7099958023149063667, guid: 8389545f522783647bb87bd265c62fe4,
         type: 3}
       propertyPath: m_Name
@@ -30876,12 +30901,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6466969564484309834}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74dfe9c708e34bb42988af03eb3ad530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionEnabled: 1
+  interactionEnabled: 0
   eventInteract:
     m_PersistentCalls:
       m_Calls:
@@ -34270,7 +34295,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1964542243890252776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52632,15 +52657,15 @@ RectTransform:
   - {fileID: 1069129196}
   - {fileID: 2112894768}
   - {fileID: 1132542595}
-  - {fileID: 334617396}
   - {fileID: 1657736607}
+  - {fileID: 1723191292}
   - {fileID: 1911914275}
   - {fileID: 256056142}
   - {fileID: 1195200103}
   - {fileID: 2076395508}
+  - {fileID: 334617396}
   - {fileID: 1905689581}
   - {fileID: 857385048}
-  - {fileID: 1723191292}
   - {fileID: 1718883297}
   - {fileID: 1009622703}
   - {fileID: 5703761144869871908}
@@ -76264,7 +76289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74dfe9c708e34bb42988af03eb3ad530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionEnabled: 1
+  interactionEnabled: 0
   eventInteract:
     m_PersistentCalls:
       m_Calls:
@@ -79835,10 +79860,12 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: 2523ff5080f5f1c47882093d4801bde3, type: 3}
   - key: TrafficLight
     icon: {fileID: 21300000, guid: 3c84190c6b73d1b488da16accc6d4f84, type: 3}
-  - key: ICC
-    icon: {fileID: 21300000, guid: ecf63a767f337e1489110cb7b8d4fa4f, type: 3}
-  - key: PalaceMuseum
-    icon: {fileID: 21300000, guid: d8c870c8512f18b45b9318f31a7f9c0f, type: 3}
+  - key: Chung King Mansion
+    icon: {fileID: 21300000, guid: a17cb8fe9e91c5a498c76ca1c810279c, type: 3}
+  - key: Elements
+    icon: {fileID: 21300000, guid: 49b2c6b7b7af05e4ba2662721729e175, type: 3}
+  - key: Hong Kong cultural centre
+    icon: {fileID: 21300000, guid: fd6378a38deb9ab44b8a878758a7d9ef, type: 3}
   revealInterval: 0.4
   ExposedTargets:
   - parent: {fileID: 336625464}

@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class CKF_AttractionImageController : MonoBehaviour
 {
-    public Image image;
+    public Image image, icon;
 
     [Min(0)]public float minShowDuration, overlayTime;
     [ReadonlyField] public float showTimeRemaining;
@@ -15,6 +16,7 @@ public class CKF_AttractionImageController : MonoBehaviour
     public CKF_Timer overlayTimer;
     public TextMeshProUGUI text;
     public CKF_RefImageCover imageRefImageCover;
+    public CKF_RefImageContain iconRefImageContain;
     public bool overlayIsVisible = true;
 
     [System.Serializable]
@@ -24,6 +26,7 @@ public class CKF_AttractionImageController : MonoBehaviour
         [TextArea]
         public string name;
         public Sprite image;
+        public Sprite icon;
     }
 
     public List<Profile> attractions;
@@ -31,6 +34,7 @@ public class CKF_AttractionImageController : MonoBehaviour
     private readonly Dictionary<string, Profile> mapAttractions = new();
 
     private readonly List<string> buffer = new();
+    public UnityEvent becomeVisible;
 
     private void Awake()
     {
@@ -60,6 +64,7 @@ public class CKF_AttractionImageController : MonoBehaviour
                     overlayIsVisible = false;
                     overlayTimer.ToTime(0.5f * overlayTime);
                     SetProfile(mapAttractions[key]);
+                    becomeVisible?.Invoke();
                 }
                 else
                 {
@@ -82,8 +87,10 @@ public class CKF_AttractionImageController : MonoBehaviour
     private void SetProfile(Profile profile)
     {
         image.sprite = profile.image;
+        icon.sprite = profile.icon;
         text.text = profile.name;
         imageRefImageCover.UpdateImage();
+        iconRefImageContain.UpdateImage();
     }
     public void AddTexture(Texture t)
     {

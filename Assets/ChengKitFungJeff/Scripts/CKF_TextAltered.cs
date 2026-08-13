@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
-
+[DefaultExecutionOrder(-30000)]
 public class CKF_TextAltered : MonoBehaviour
 {
     [GetSelfField] public TextMeshProUGUI text;

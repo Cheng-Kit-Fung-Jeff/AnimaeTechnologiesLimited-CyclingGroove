@@ -24,6 +24,7 @@ public class CKF_Math : MonoBehaviour
     public void SetGammaToLinearSpace(float value) { this.value = Mathf.GammaToLinearSpace(value); }
     public void SetClamp01(float value) { this.value = Mathf.Clamp01(value); }
     public void SetCeil(float value) { this.value = Mathf.Ceil(value); }
+    public void SetFloor(float value) { this.value = Mathf.Floor(value); }
     public void SetAsin(float value) { this.value = Mathf.Asin(value); }
     public void SetAcos(float value) { this.value = Mathf.Acos(value); }
     public void SetAtan(float value) { this.value = Mathf.Atan(value); }
@@ -45,6 +46,7 @@ public class CKF_Math : MonoBehaviour
     public void ApplyGammaToLinearSpace() { value = Mathf.GammaToLinearSpace(value); }
     public void ApplyClamp01() { value = Mathf.Clamp01(value); }
     public void ApplyCeil() { value = Mathf.Ceil(value); }
+    public void ApplyFloor() { value = Mathf.Floor(value); }
     public void ApplyAsin() { value = Mathf.Asin(value); }
     public void ApplyAcos() { value = Mathf.Acos(value); }
     public void ApplyAtan() { value = Mathf.Atan(value); }
@@ -67,6 +69,7 @@ public class CKF_Math : MonoBehaviour
     public void GetGammaToLinearSpace(float value) { getValue?.Invoke(Mathf.GammaToLinearSpace(value)); }
     public void GetClamp01(float value) { getValue?.Invoke(Mathf.Clamp01(value)); }
     public void GetCeil(float value) { getValue?.Invoke(Mathf.Ceil(value)); }
+    public void GetFloor(float value) { getValue?.Invoke(Mathf.Floor(value)); }
     public void GetAsin(float value) { getValue?.Invoke(Mathf.Asin(value)); }
     public void GetAcos(float value) { getValue?.Invoke(Mathf.Acos(value)); }
     public void GetAtan(float value) { getValue?.Invoke(Mathf.Atan(value)); }

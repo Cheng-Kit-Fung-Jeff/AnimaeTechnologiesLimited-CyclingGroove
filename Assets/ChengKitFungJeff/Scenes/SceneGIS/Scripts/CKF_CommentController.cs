@@ -1,13 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using static CKF_CommentController;
 
 public class CKF_CommentController : MonoBehaviour
 {
-    public List<CKF_CommentListInterface> profiles;
-    private List<int> profilesPool = new(), activeProfiles = new();
+    private CKF_CommentListInterface[] profiles;
+    private readonly List<int> profilesPool = new(), activeProfiles = new();
 
     public CKF_CommentList list;
     [System.Serializable]
@@ -23,11 +21,12 @@ public class CKF_CommentController : MonoBehaviour
     [ReadonlyField] public int currentPhase = -1;
 
     public List<Phase> special;
-    private Dictionary<string, Phase> mapSpecial = new();
+    private readonly Dictionary<string, Phase> mapSpecial = new();
 
     private void Awake()
     {
-        for (int i = 0; i < profiles.Count; ++i)
+        profiles = GetComponents<CKF_CommentListInterface>();
+        for (int i = 0; i < profiles.Length; ++i)
         {
             profilesPool.Add(i);
         }

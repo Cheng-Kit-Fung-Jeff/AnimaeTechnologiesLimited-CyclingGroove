@@ -3169,12 +3169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a517548e5d4f2454db65433c8207b72b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profiles:
-  - {fileID: 1019002038}
-  - {fileID: 1019002042}
-  - {fileID: 1019002041}
-  - {fileID: 1019002040}
-  - {fileID: 1019002039}
   list: {fileID: 1200723081}
   phases:
   - key: Phase
@@ -4759,6 +4753,119 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 0
+--- !u!1 &1321647906
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 7
+  m_Component:
+  - component: {fileID: 1321647907}
+  - component: {fileID: 1321647909}
+  - component: {fileID: 1321647908}
+  m_Layer: 0
+  m_HasEditorInfo: 1
+  m_Name: ResetController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1321647907
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321647906}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7517148348067646609}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1321647908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321647906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bd4734a948b2dc469b634766f6b440f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0
+  curTime: 0
+  pause: 0
+  eventSet:
+    m_PersistentCalls:
+      m_Calls: []
+  eventSetRate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 437486676}
+        m_TargetAssemblyTypeName: CKF_MAD, Assembly-CSharp
+        m_MethodName: GetValue
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  eventEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6569340389072274115}
+        m_TargetAssemblyTypeName: CKF_UnityEvent, Assembly-CSharp
+        m_MethodName: CallEvent
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SceneReset
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1321647909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321647906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1379816489b84c4f93209f610df3e28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mult: 10
+  add: 0
+  lastValue: 0
+  lastResult: 0
+  getValue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1321647908}
+        m_TargetAssemblyTypeName: CKF_Timer, Assembly-CSharp
+        m_MethodName: setTimer
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1341341868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4981,8 +5088,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1066466133}
   m_HandleRect: {fileID: 1066466132}
   m_Direction: 0
-  m_Value: 1
-  m_Size: 0.9999999
+  m_Value: 0
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5227,7 +5334,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 48.25
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -23533,7 +23640,6 @@ GameObject:
   - component: {fileID: 3660148635259260555}
   - component: {fileID: 5200712780306837464}
   - component: {fileID: 6569340389072274115}
-  - component: {fileID: 3260810810713783812}
   - component: {fileID: 7781516095563217730}
   - component: {fileID: 4845449185571137566}
   - component: {fileID: 2897572194075171310}
@@ -50451,54 +50557,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3260810810713783812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1131728249322580045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bd4734a948b2dc469b634766f6b440f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duration: 0
-  curTime: 0
-  pause: 0
-  eventSet:
-    m_PersistentCalls:
-      m_Calls: []
-  eventSetRate:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 437486676}
-        m_TargetAssemblyTypeName: CKF_MAD, Assembly-CSharp
-        m_MethodName: GetValue
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  eventEnd:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6569340389072274115}
-        m_TargetAssemblyTypeName: CKF_UnityEvent, Assembly-CSharp
-        m_MethodName: CallEvent
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: SceneReset
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &3260987449427394120
 GameObject:
   m_ObjectHideFlags: 0
@@ -54788,6 +54846,18 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 7406641170639115188}
+        m_TargetAssemblyTypeName: CKF_GetFile, Assembly-CSharp
+        m_MethodName: GetFile
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7406641170639115189}
         m_TargetAssemblyTypeName: CKF_GetFile, Assembly-CSharp
         m_MethodName: GetFile
         m_Mode: 1
@@ -68139,9 +68209,9 @@ RectTransform:
   - {fileID: 7950405192261165100}
   - {fileID: 7034379964177479091}
   - {fileID: 794240802}
+  - {fileID: 748801944}
   - {fileID: 4779519643094866416}
   - {fileID: 2861838454195227167}
-  - {fileID: 748801944}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -69524,7 +69594,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4613563704114189442
 RectTransform:
   m_ObjectHideFlags: 0
@@ -80123,11 +80193,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 0.2
-  scaleLeft: 1.5
-  scaleRight: 1.1
-  scaleTop: 1.1
-  scaleBottom: 1.1
+  scaleLeft: 1.4
+  scaleRight: 1.25
+  scaleTop: 1.4
+  scaleBottom: 1.25
   positionOffset: {x: 0, y: 1, z: 0}
+  minimum: {x: -5, y: 0, z: -3.35}
+  maximum: {x: 4, y: 0, z: 4}
   position: {x: 0, y: 0, z: 0}
   eventResize:
     m_PersistentCalls:
@@ -94920,8 +94992,9 @@ GameObject:
   - component: {fileID: 6924566876473931255}
   - component: {fileID: 4688704259516501472}
   - component: {fileID: 2793014519631027766}
-  - component: {fileID: 7406641170639115188}
   - component: {fileID: 7406641170639115186}
+  - component: {fileID: 7406641170639115188}
+  - component: {fileID: 7406641170639115189}
   m_Layer: 0
   m_HasEditorInfo: 1
   m_Name: FileController
@@ -107883,6 +107956,44 @@ MonoBehaviour:
   getInt:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7406641170639115189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6505210311022957289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1644fbf89d36e4a4584a69695731cced, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  file: resetTime.txt
+  error: {fileID: 236996665779939819}
+  checkString: 0
+  getString:
+    m_PersistentCalls:
+      m_Calls: []
+  checkFloat: 1
+  getFloat:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1321647909}
+        m_TargetAssemblyTypeName: CKF_MAD, Assembly-CSharp
+        m_MethodName: SetMult
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  checkInt: 0
+  getInt:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!224 &7407638776982585064
 RectTransform:
   m_ObjectHideFlags: 0
@@ -109101,6 +109212,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1321647907}
   - {fileID: 2812565946695856673}
   - {fileID: 4432728760581061569}
   - {fileID: 4488178948164993473}
@@ -112491,15 +112603,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 3260810810713783812}
-        m_TargetAssemblyTypeName: CKF_Timer, Assembly-CSharp
-        m_MethodName: setTimer
+      - m_Target: {fileID: 1321647909}
+        m_TargetAssemblyTypeName: CKF_MAD, Assembly-CSharp
+        m_MethodName: GetValue
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 10
+          m_FloatArgument: 1
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -112554,7 +112666,7 @@ MonoBehaviour:
   Event:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3260810810713783812}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CKF_Timer, Assembly-CSharp
         m_MethodName: CallSetRate
         m_Mode: 4

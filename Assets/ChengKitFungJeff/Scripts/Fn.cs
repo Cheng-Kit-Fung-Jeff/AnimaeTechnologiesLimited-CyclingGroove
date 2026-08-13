@@ -222,6 +222,17 @@ public static class Fn
             l[i] = t;
         }
     }
+    public static void ShuffleFisherYates<T>(T[] l)
+    {
+        for (int i = l.Length; i > 1;)
+        {
+            int index = UnityEngine.Random.Range(0, i);
+            --i;
+            T t = l[index];
+            l[index] = l[i];
+            l[i] = t;
+        }
+    }
 
     public static float[][] MatrixTp(float[][] m)
     {

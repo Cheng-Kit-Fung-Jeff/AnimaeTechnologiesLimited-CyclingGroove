@@ -27,13 +27,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 576190455678721774}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7121620258621112867}
-  m_Father: {fileID: 370928691222876100}
+  m_Father: {fileID: 2776775803114453133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -92,43 +92,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &1814014223375095264
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 7
-  m_Component:
-  - component: {fileID: 370928691222876100}
-  m_Layer: 5
-  m_HasEditorInfo: 1
-  m_Name: IconWrapper2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &370928691222876100
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1814014223375095264}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4112698971251047793}
-  m_Father: {fileID: 2776775803114453133}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.5, y: 0}
-  m_SizeDelta: {x: -15, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2413764261556700481
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,7 +103,6 @@ GameObject:
   - component: {fileID: 2776775803114453133}
   - component: {fileID: 7988612312807755284}
   - component: {fileID: 6050699478144059089}
-  - component: {fileID: 6663763941325692510}
   m_Layer: 5
   m_HasEditorInfo: 1
   m_Name: IconWrapper
@@ -161,7 +123,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 370928691222876100}
+  - {fileID: 4112698971251047793}
   - {fileID: 4576537948753677263}
   m_Father: {fileID: 8146540314076146036}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -200,14 +162,6 @@ MonoBehaviour:
   preservePixels: 0
   selfRect: {fileID: 7988612312807755284}
   selfLayoutElement: {fileID: 0}
---- !u!222 &6663763941325692510
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2413764261556700481}
-  m_CullTransparentMesh: 1
 --- !u!1 &5206481049568060781
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,7 +276,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -10, y: 0}
   m_SizeDelta: {x: 256.1, y: 0}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &4214477522002570753

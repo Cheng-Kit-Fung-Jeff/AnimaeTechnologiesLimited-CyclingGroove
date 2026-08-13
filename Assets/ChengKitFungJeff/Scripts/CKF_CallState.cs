@@ -29,6 +29,7 @@ public class CKF_CallState : MonoBehaviour
         }
         foreach (string k in deferredCall)
         {
+            currentState = k;
             CallEvent(k);
         }
     }
@@ -43,8 +44,9 @@ public class CKF_CallState : MonoBehaviour
             deferredCall.Add(key);
             return;
         }
-        if(mapEvents.ContainsKey(key))
-            mapEvents[key]?.Invoke();
+        currentState = key;
+        if(mapEvents.ContainsKey(currentState))
+            mapEvents[currentState]?.Invoke();
     }
 
     public void SetState(string value) { currentState = value; }

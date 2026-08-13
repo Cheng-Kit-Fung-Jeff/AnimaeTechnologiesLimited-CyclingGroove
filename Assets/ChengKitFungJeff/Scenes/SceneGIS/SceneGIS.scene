@@ -3274,7 +3274,7 @@ GameObject:
   - component: {fileID: 991265811}
   m_Layer: 5
   m_HasEditorInfo: 1
-  m_Name: CommentWrapSection
+  m_Name: CommentSectionWrapper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3482,9 +3482,9 @@ MonoBehaviour:
   - state: Phase
     comment:
     - I ride a bike to work
-    - I rode every other day since a child
+    - I rode every other day for 10 years now
     - I ride a bike to stay healthy
-    - People call me weird, but I like cycling
+    - I maybe weird, but I like cycling
   - state: DrinkWater
     comment:
     - Take a slip <sprite name=WaterBottle> to stay hydrated
@@ -5621,7 +5621,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1066466133}
   m_HandleRect: {fileID: 1066466132}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -8063,7 +8063,7 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1200723074}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.05, y: 0.05}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
@@ -8095,10 +8095,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 10
-    m_Right: 10
-    m_Top: 10
-    m_Bottom: 10
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
   m_ChildAlignment: 6
   m_Spacing: 0
   m_ChildForceExpandWidth: 0
@@ -11020,25 +11020,6 @@ MonoBehaviour:
   eventEnd:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &146545574802040842
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 7
-  m_Component:
-  - component: {fileID: 4145168717806817810}
-  - component: {fileID: 8219148698817908861}
-  - component: {fileID: 8307068792882812232}
-  m_Layer: 0
-  m_HasEditorInfo: 1
-  m_Name: bikeSilhoulette
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
 --- !u!1 &147776123328941268
 GameObject:
   m_ObjectHideFlags: 0
@@ -62990,25 +62971,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!224 &4145168717806817810
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 146545574802040842}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.05, y: 1.05, z: 1.05}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 7507366715167305441}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.12, y: 0}
-  m_SizeDelta: {x: 1, y: 1}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &4145917626959212173
 RectTransform:
   m_ObjectHideFlags: 0
@@ -109830,7 +109792,6 @@ RectTransform:
   - {fileID: 2896774534454723498}
   - {fileID: 3425233113758889296}
   - {fileID: 1666505260699162063}
-  - {fileID: 4145168717806817810}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -119382,14 +119343,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!222 &8219148698817908861
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 146545574802040842}
-  m_CullTransparentMesh: 1
 --- !u!1 &8220666558816568310
 GameObject:
   m_ObjectHideFlags: 0
@@ -120845,33 +120798,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &8307068792882812232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 146545574802040842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 7974cdac100e13b49bd9a13147989a11, type: 3}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
 --- !u!1 &8307175286901043817
 GameObject:
   m_ObjectHideFlags: 0

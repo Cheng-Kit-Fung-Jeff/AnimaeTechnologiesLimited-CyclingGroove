@@ -69,6 +69,30 @@ public class CKF_RectTransform : MonoBehaviour
         selfRect.anchoredPosition3D = new(selfRect.anchoredPosition3D.x, selfRect.anchoredPosition3D.y, value);
     }
 
+    public void IncrementAnchoredPositionX(float value)
+    {
+        selfRect.anchoredPosition3D = new(
+            selfRect.anchoredPosition3D.x + value,
+            selfRect.anchoredPosition3D.y,
+            selfRect.anchoredPosition3D.z);
+    }
+
+    public void IncrementAnchoredPositionY(float value)
+    {
+        selfRect.anchoredPosition3D = new(
+            selfRect.anchoredPosition3D.x,
+            selfRect.anchoredPosition3D.y + value,
+            selfRect.anchoredPosition3D.z);
+    }
+
+    public void IncrementAnchoredPositionZ(float value)
+    {
+        selfRect.anchoredPosition3D = new(
+            selfRect.anchoredPosition3D.x,
+            selfRect.anchoredPosition3D.y,
+            selfRect.anchoredPosition3D.z + value);
+    }
+
     public void SetAnchoredPosition(Vector3 value)
     {
         selfRect.anchoredPosition3D = value;

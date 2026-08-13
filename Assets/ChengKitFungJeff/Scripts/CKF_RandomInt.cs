@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class CKF_RandomInt : MonoBehaviour
 {
     public int start;
-    [Min(1)]public int range;
+    [Min(1)]public int range = 1;
     public bool allowDuplicates;
     public UnityEvent<int> getValue;
     private List<int> pool;

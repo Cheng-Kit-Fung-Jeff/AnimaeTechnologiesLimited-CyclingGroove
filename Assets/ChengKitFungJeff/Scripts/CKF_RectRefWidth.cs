@@ -1,5 +1,5 @@
 using UnityEngine;
-
+[RequireComponent(typeof(CKF_RectTransform))]
 public class CKF_RectRefWidth : MonoBehaviour
 {
     public RefRectTarget initRectTarget;

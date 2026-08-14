@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/ChengKitFungJeff/Scenes/SceneCredits/SceneCredits.scene
+    guid: de311d2c0761e2d4fb169b1340ab0e32
+  - enabled: 1
     path: Assets/ChengKitFungJeff/Scenes/SceneGIS/SceneGIS.scene
     guid: ef6a4dcffc8efa34faa7da29c6069f15
   - enabled: 0

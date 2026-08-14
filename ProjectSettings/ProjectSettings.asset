@@ -898,7 +898,7 @@ PlayerSettings:
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 1
   monoAOTCompilation: 0
-  gcIncremental: 0
+  gcIncremental: 1
   gcWBarrierValidation: 0
   gcAlgorithm: {}
   apiCompatibilityLevelPerPlatform: {}

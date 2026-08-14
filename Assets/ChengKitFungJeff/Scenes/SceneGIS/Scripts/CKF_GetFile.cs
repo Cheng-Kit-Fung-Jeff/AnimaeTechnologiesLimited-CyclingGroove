@@ -12,6 +12,7 @@ public class CKF_GetFile : MonoBehaviour
     public UnityEvent<float> getFloat = new();
     public bool checkInt = false;
     public UnityEvent<int> getInt = new();
+    public UnityEvent<string> getError;
 
     public void GetFile()
     {
@@ -23,26 +24,31 @@ public class CKF_GetFile : MonoBehaviour
         if (err != null)
         {
             if(error != null)
+            {
                 error.text += err + '\n';
+            }
+            getError?.Invoke(err);
             return;
         }
         if(checkString)
             getString?.Invoke(res);
-        if (error == null)
-        {
-            if (checkFloat && float.TryParse(res, out float f))
-                getFloat?.Invoke(f);
-            if (checkFloat && int.TryParse(res, out int i))
-                getInt?.Invoke(i);
-        }
-        else
-        {
-            if(checkFloat)
-                try { getFloat?.Invoke(float.Parse(res)); }
-                catch (System.Exception e){ error.text += $"{System.IO.Path.Combine(Application.dataPath,file)}, {e.Message}\n"; }
-            if (checkInt)
-                try { getInt?.Invoke(int.Parse(res)); }
-                catch (System.Exception e) { error.text += $"{System.IO.Path.Combine(Application.dataPath, file)}, {e.Message}\n"; }
-        }
+        if (checkFloat)
+            try { getFloat?.Invoke(float.Parse(res)); }
+            catch (System.Exception e)
+            {
+                err = $"{System.IO.Path.Combine(Application.dataPath, file)}, {e.Message}\n";
+                if (error == null)
+                    error.text += err;
+                getError?.Invoke(err);
+            }
+        if (checkInt)
+            try { getInt?.Invoke(int.Parse(res)); }
+            catch (System.Exception e)
+            {
+                err = $"{System.IO.Path.Combine(Application.dataPath, file)}, {e.Message}\n";
+                if (error == null)
+                    error.text += err;
+                getError?.Invoke(err);
+            }
     }
 }

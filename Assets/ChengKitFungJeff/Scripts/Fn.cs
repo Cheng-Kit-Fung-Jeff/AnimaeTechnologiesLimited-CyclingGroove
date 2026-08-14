@@ -1359,7 +1359,7 @@ public static class Fn
             Debug.Log(deb);
         }
     }*/
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    /*[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     public static void i()
     {
         /*for (int testsize = 4; testsize < 6; ++testsize)
@@ -1386,7 +1386,7 @@ public static class Fn
             PrintMatrix(MatrixMulTp(inv));
             PrintMatrix(MatrixMul(test, inv));
             PrintMatrix(MatrixMul(inv, test));
-        }*/
+        }
 
         int testSize = 20;
         float[] x = new float[testSize], y = new float[testSize], r;
